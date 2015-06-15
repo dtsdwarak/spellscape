@@ -1,0 +1,41 @@
+<!-- TRANSLATION MODAL -->
+<div class="spellscape-modal spellscape-fade" id="spellScapeModal" tabindex="-1" role="dialog" aria-labelledby="spellScapeLabel" aria-hidden="true">
+  <div class="spellscape-modal-dialog">
+    <div class="spellscape-modal-content">
+
+
+      <div class="spellscape-modal-header">
+        <button type="button" class="spellscape-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="spellscape-modal-title" id="spellScapeLabel">Provide Translation</h4>
+      </div>
+    
+      <div class="spellscape-modal-body">
+      	<label for="input_text" class="spellscape-control-label">Input Text</label>
+        <input type="text" id="input_text" class="spellscape-form-control"> 
+        <label for="translated_text" class="spellscape-control-label">Translated Text</label>
+        <input type="text" id="translated_text" class="spellscape-form-control">
+      </div>
+    
+      <div class="spellscape-modal-footer">
+        <button type="button" class="spellscape-btn spellscape-btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="spellscape-btn spellscape-btn-primary" id="spellScapeSave">Save changes</button>
+      </div>
+    
+    </div>
+  </div>
+</div>
+  
+<script type="text/JavaScript">
+  $(document).ready(function(){
+
+    $('#spellScapeSave').click(function(){
+      var input = document.getElementById("input_text").value;
+      var translated_text = document.getElementById("translated_text").value;
+      localStorage.setItem(input,translated_text);
+      console.log("stored value is = "+localStorage.getItem(input));
+      // console.log("hey there!");
+    });
+
+});
+</script>
+<!-- END FOR TRANSLATION -->

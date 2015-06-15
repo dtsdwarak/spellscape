@@ -1,0 +1,2326 @@
+/*!
+ * Bootstrap v3.3.4 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+/*!
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=1902ed1e0360c2cd4072)
+ * Config saved to config.json and https://gist.github.com/1902ed1e0360c2cd4072
+ */
+
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.spellscape-img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.spellscape-img-rounded {
+  border-radius: 6px;
+}
+
+.spellscape-img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.spellscape-img-circle {
+  border-radius: 50%;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+
+.spellscape-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.spellscape-sr-only-focusable:active,
+.spellscape-sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+[role="button"] {
+  cursor: pointer;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="search"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+
+input[type="file"] {
+  display: block;
+}
+
+input[type="range"] {
+  display: block;
+  width: 100%;
+}
+
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+output {
+  display: block;
+  padding-top: 7px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+}
+
+.spellscape-form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.spellscape-form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.spellscape-form-control::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+.spellscape-form-control:-ms-input-placeholder {
+  color: #999999;
+}
+
+.spellscape-form-control::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.spellscape-form-control[disabled],
+.spellscape-form-control[readonly],
+fieldset[disabled] .spellscape-form-control {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+
+.spellscape-form-control[disabled],
+fieldset[disabled] .spellscape-form-control {
+  cursor: not-allowed;
+}
+
+textarea.spellscape-form-control {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] {
+    line-height: 34px;
+  }
+
+  input[type="date"].spellscape-input-sm,
+  input[type="time"].spellscape-input-sm,
+  input[type="datetime-local"].spellscape-input-sm,
+  input[type="month"].spellscape-input-sm,
+  .spellscape-input-group-sm input[type="date"],
+  .spellscape-input-group-sm input[type="time"],
+  .spellscape-input-group-sm input[type="datetime-local"],
+  .spellscape-input-group-sm input[type="month"] {
+    line-height: 30px;
+  }
+
+  input[type="date"].spellscape-input-lg,
+  input[type="time"].spellscape-input-lg,
+  input[type="datetime-local"].spellscape-input-lg,
+  input[type="month"].spellscape-input-lg,
+  .spellscape-input-group-lg input[type="date"],
+  .spellscape-input-group-lg input[type="time"],
+  .spellscape-input-group-lg input[type="datetime-local"],
+  .spellscape-input-group-lg input[type="month"] {
+    line-height: 46px;
+  }
+}
+
+.spellscape-form-group {
+  margin-bottom: 15px;
+}
+
+.spellscape-radio,
+.spellscape-checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.spellscape-radio label,
+.spellscape-checkbox label {
+  min-height: 20px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.spellscape-radio input[type="radio"],
+.spellscape-radio-inline input[type="radio"],
+.spellscape-checkbox input[type="checkbox"],
+.spellscape-checkbox-inline input[type="checkbox"] {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 4px \9;
+}
+
+.spellscape-radio + .spellscape-radio,
+.spellscape-checkbox + .spellscape-checkbox {
+  margin-top: -5px;
+}
+
+.spellscape-radio-inline,
+.spellscape-checkbox-inline {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.spellscape-radio-inline + .spellscape-radio-inline,
+.spellscape-checkbox-inline + .spellscape-checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px;
+}
+
+input[type="radio"][disabled],
+input[type="checkbox"][disabled],
+input[type="radio"].spellscape-disabled,
+input[type="checkbox"].spellscape-disabled,
+fieldset[disabled] input[type="radio"],
+fieldset[disabled] input[type="checkbox"] {
+  cursor: not-allowed;
+}
+
+.spellscape-radio-inline.spellscape-disabled,
+.spellscape-checkbox-inline.spellscape-disabled,
+fieldset[disabled] .spellscape-radio-inline,
+fieldset[disabled] .spellscape-checkbox-inline {
+  cursor: not-allowed;
+}
+
+.spellscape-radio.spellscape-disabled label,
+.spellscape-checkbox.spellscape-disabled label,
+fieldset[disabled] .spellscape-radio label,
+fieldset[disabled] .spellscape-checkbox label {
+  cursor: not-allowed;
+}
+
+.spellscape-form-control-static {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 0;
+  min-height: 34px;
+}
+
+.spellscape-form-control-static.spellscape-input-lg,
+.spellscape-form-control-static.spellscape-input-sm {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.spellscape-input-sm {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+select.spellscape-input-sm {
+  height: 30px;
+  line-height: 30px;
+}
+
+textarea.spellscape-input-sm,
+select[multiple].spellscape-input-sm {
+  height: auto;
+}
+
+.spellscape-form-group-sm .spellscape-form-control {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+select.spellscape-form-group-sm .spellscape-form-control {
+  height: 30px;
+  line-height: 30px;
+}
+
+textarea.spellscape-form-group-sm .spellscape-form-control,
+select[multiple].spellscape-form-group-sm .spellscape-form-control {
+  height: auto;
+}
+
+.spellscape-form-group-sm .spellscape-form-control-static {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  min-height: 32px;
+}
+
+.spellscape-input-lg {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
+select.spellscape-input-lg {
+  height: 46px;
+  line-height: 46px;
+}
+
+textarea.spellscape-input-lg,
+select[multiple].spellscape-input-lg {
+  height: auto;
+}
+
+.spellscape-form-group-lg .spellscape-form-control {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
+select.spellscape-form-group-lg .spellscape-form-control {
+  height: 46px;
+  line-height: 46px;
+}
+
+textarea.spellscape-form-group-lg .spellscape-form-control,
+select[multiple].spellscape-form-group-lg .spellscape-form-control {
+  height: auto;
+}
+
+.spellscape-form-group-lg .spellscape-form-control-static {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  min-height: 38px;
+}
+
+.spellscape-has-feedback {
+  position: relative;
+}
+
+.spellscape-has-feedback .spellscape-form-control {
+  padding-right: 42.5px;
+}
+
+.spellscape-form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.spellscape-input-lg + .spellscape-form-control-feedback {
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+}
+
+.spellscape-input-sm + .spellscape-form-control-feedback {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.spellscape-has-success .spellscape-help-block,
+.spellscape-has-success .spellscape-control-label,
+.spellscape-has-success .spellscape-radio,
+.spellscape-has-success .spellscape-checkbox,
+.spellscape-has-success .spellscape-radio-inline,
+.spellscape-has-success .spellscape-checkbox-inline,
+.spellscape-has-success.spellscape-radio label,
+.spellscape-has-success.spellscape-checkbox label,
+.spellscape-has-success.spellscape-radio-inline label,
+.spellscape-has-success.spellscape-checkbox-inline label {
+  color: #3c763d;
+}
+
+.spellscape-has-success .spellscape-form-control {
+  border-color: #3c763d;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.spellscape-has-success .spellscape-form-control:focus {
+  border-color: #2b542c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+}
+
+.spellscape-has-success .spellscape-input-group-addon {
+  color: #3c763d;
+  border-color: #3c763d;
+  background-color: #dff0d8;
+}
+
+.spellscape-has-success .spellscape-form-control-feedback {
+  color: #3c763d;
+}
+
+.spellscape-has-warning .spellscape-help-block,
+.spellscape-has-warning .spellscape-control-label,
+.spellscape-has-warning .spellscape-radio,
+.spellscape-has-warning .spellscape-checkbox,
+.spellscape-has-warning .spellscape-radio-inline,
+.spellscape-has-warning .spellscape-checkbox-inline,
+.spellscape-has-warning.spellscape-radio label,
+.spellscape-has-warning.spellscape-checkbox label,
+.spellscape-has-warning.spellscape-radio-inline label,
+.spellscape-has-warning.spellscape-checkbox-inline label {
+  color: #8a6d3b;
+}
+
+.spellscape-has-warning .spellscape-form-control {
+  border-color: #8a6d3b;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.spellscape-has-warning .spellscape-form-control:focus {
+  border-color: #66512c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+}
+
+.spellscape-has-warning .spellscape-input-group-addon {
+  color: #8a6d3b;
+  border-color: #8a6d3b;
+  background-color: #fcf8e3;
+}
+
+.spellscape-has-warning .spellscape-form-control-feedback {
+  color: #8a6d3b;
+}
+
+.spellscape-has-error .spellscape-help-block,
+.spellscape-has-error .spellscape-control-label,
+.spellscape-has-error .spellscape-radio,
+.spellscape-has-error .spellscape-checkbox,
+.spellscape-has-error .spellscape-radio-inline,
+.spellscape-has-error .spellscape-checkbox-inline,
+.spellscape-has-error.spellscape-radio label,
+.spellscape-has-error.spellscape-checkbox label,
+.spellscape-has-error.spellscape-radio-inline label,
+.spellscape-has-error.spellscape-checkbox-inline label {
+  color: #a94442;
+}
+
+.spellscape-has-error .spellscape-form-control {
+  border-color: #a94442;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.spellscape-has-error .spellscape-form-control:focus {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+
+.spellscape-has-error .spellscape-input-group-addon {
+  color: #a94442;
+  border-color: #a94442;
+  background-color: #f2dede;
+}
+
+.spellscape-has-error .spellscape-form-control-feedback {
+  color: #a94442;
+}
+
+.spellscape-has-feedback label ~ .spellscape-form-control-feedback {
+  top: 25px;
+}
+
+.spellscape-has-feedback label.spellscape-sr-only ~ .spellscape-form-control-feedback {
+  top: 0;
+}
+
+.spellscape-help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #737373;
+}
+
+@media (min-width: 768px) {
+  .spellscape-form-inline .spellscape-form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .spellscape-form-inline .spellscape-form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  .spellscape-form-inline .spellscape-form-control-static {
+    display: inline-block;
+  }
+
+  .spellscape-form-inline .spellscape-input-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+
+  .spellscape-form-inline .spellscape-input-group .spellscape-input-group-addon,
+  .spellscape-form-inline .spellscape-input-group .spellscape-input-group-btn,
+  .spellscape-form-inline .spellscape-input-group .spellscape-form-control {
+    width: auto;
+  }
+
+  .spellscape-form-inline .spellscape-input-group > .spellscape-form-control {
+    width: 100%;
+  }
+
+  .spellscape-form-inline .spellscape-control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .spellscape-form-inline .spellscape-radio,
+  .spellscape-form-inline .spellscape-checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .spellscape-form-inline .spellscape-radio label,
+  .spellscape-form-inline .spellscape-checkbox label {
+    padding-left: 0;
+  }
+
+  .spellscape-form-inline .spellscape-radio input[type="radio"],
+  .spellscape-form-inline .spellscape-checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+
+  .spellscape-form-inline .spellscape-has-feedback .spellscape-form-control-feedback {
+    top: 0;
+  }
+}
+
+.spellscape-form-horizontal .spellscape-radio,
+.spellscape-form-horizontal .spellscape-checkbox,
+.spellscape-form-horizontal .spellscape-radio-inline,
+.spellscape-form-horizontal .spellscape-checkbox-inline {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 7px;
+}
+
+.spellscape-form-horizontal .spellscape-radio,
+.spellscape-form-horizontal .spellscape-checkbox {
+  min-height: 27px;
+}
+
+.spellscape-form-horizontal .spellscape-form-group {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+@media (min-width: 768px) {
+  .spellscape-form-horizontal .spellscape-control-label {
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 7px;
+  }
+}
+
+.spellscape-form-horizontal .spellscape-has-feedback .spellscape-form-control-feedback {
+  right: 15px;
+}
+
+@media (min-width: 768px) {
+  .spellscape-form-horizontal .spellscape-form-group-lg .spellscape-control-label {
+    padding-top: 14.333333px;
+  }
+}
+
+@media (min-width: 768px) {
+  .spellscape-form-horizontal .spellscape-form-group-sm .spellscape-control-label {
+    padding-top: 6px;
+  }
+}
+
+.spellscape-btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.spellscape-btn:focus,
+.spellscape-btn:active:focus,
+.spellscape-btn.spellscape-active:focus,
+.spellscape-btn.spellscape-focus,
+.spellscape-btn:active.spellscape-focus,
+.spellscape-btn.spellscape-active.spellscape-focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.spellscape-btn:hover,
+.spellscape-btn:focus,
+.spellscape-btn.spellscape-focus {
+  color: #333333;
+  text-decoration: none;
+}
+
+.spellscape-btn:active,
+.spellscape-btn.spellscape-active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.spellscape-btn.spellscape-disabled,
+.spellscape-btn[disabled],
+fieldset[disabled] .spellscape-btn {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.spellscape-btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+.spellscape-btn-default:hover,
+.spellscape-btn-default:focus,
+.spellscape-btn-default.spellscape-focus,
+.spellscape-btn-default:active,
+.spellscape-btn-default.spellscape-active,
+.spellscape-open > .spellscape-dropdown-toggle.spellscape-btn-default {
+  color: #333333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+.spellscape-btn-default:active,
+.spellscape-btn-default.spellscape-active,
+.spellscape-open > .spellscape-dropdown-toggle.spellscape-btn-default {
+  background-image: none;
+}
+
+.spellscape-btn-default.spellscape-disabled,
+.spellscape-btn-default[disabled],
+fieldset[disabled] .spellscape-btn-default,
+.spellscape-btn-default.spellscape-disabled:hover,
+.spellscape-btn-default[disabled]:hover,
+fieldset[disabled] .spellscape-btn-default:hover,
+.spellscape-btn-default.spellscape-disabled:focus,
+.spellscape-btn-default[disabled]:focus,
+fieldset[disabled] .spellscape-btn-default:focus,
+.spellscape-btn-default.spellscape-disabled.spellscape-focus,
+.spellscape-btn-default[disabled].spellscape-focus,
+fieldset[disabled] .spellscape-btn-default.spellscape-focus,
+.spellscape-btn-default.spellscape-disabled:active,
+.spellscape-btn-default[disabled]:active,
+fieldset[disabled] .spellscape-btn-default:active,
+.spellscape-btn-default.spellscape-disabled.spellscape-active,
+.spellscape-btn-default[disabled].spellscape-active,
+fieldset[disabled] .spellscape-btn-default.spellscape-active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+.spellscape-btn-default .spellscape-badge {
+  color: #ffffff;
+  background-color: #333333;
+}
+
+.spellscape-btn-primary {
+  color: #ffffff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.spellscape-btn-primary:hover,
+.spellscape-btn-primary:focus,
+.spellscape-btn-primary.spellscape-focus,
+.spellscape-btn-primary:active,
+.spellscape-btn-primary.spellscape-active,
+.spellscape-open > .spellscape-dropdown-toggle.spellscape-btn-primary {
+  color: #ffffff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+
+.spellscape-btn-primary:active,
+.spellscape-btn-primary.spellscape-active,
+.spellscape-open > .spellscape-dropdown-toggle.spellscape-btn-primary {
+  background-image: none;
+}
+
+.spellscape-btn-primary.spellscape-disabled,
+.spellscape-btn-primary[disabled],
+fieldset[disabled] .spellscape-btn-primary,
+.spellscape-btn-primary.spellscape-disabled:hover,
+.spellscape-btn-primary[disabled]:hover,
+fieldset[disabled] .spellscape-btn-primary:hover,
+.spellscape-btn-primary.spellscape-disabled:focus,
+.spellscape-btn-primary[disabled]:focus,
+fieldset[disabled] .spellscape-btn-primary:focus,
+.spellscape-btn-primary.spellscape-disabled.spellscape-focus,
+.spellscape-btn-primary[disabled].spellscape-focus,
+fieldset[disabled] .spellscape-btn-primary.spellscape-focus,
+.spellscape-btn-primary.spellscape-disabled:active,
+.spellscape-btn-primary[disabled]:active,
+fieldset[disabled] .spellscape-btn-primary:active,
+.spellscape-btn-primary.spellscape-disabled.spellscape-active,
+.spellscape-btn-primary[disabled].spellscape-active,
+fieldset[disabled] .spellscape-btn-primary.spellscape-active {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.spellscape-btn-primary .spellscape-badge {
+  color: #337ab7;
+  background-color: #ffffff;
+}
+
+.spellscape-btn-success {
+  color: #ffffff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.spellscape-btn-success:hover,
+.spellscape-btn-success:focus,
+.spellscape-btn-success.spellscape-focus,
+.spellscape-btn-success:active,
+.spellscape-btn-success.spellscape-active,
+.spellscape-open > .spellscape-dropdown-toggle.spellscape-btn-success {
+  color: #ffffff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+
+.spellscape-btn-success:active,
+.spellscape-btn-success.spellscape-active,
+.spellscape-open > .spellscape-dropdown-toggle.spellscape-btn-success {
+  background-image: none;
+}
+
+.spellscape-btn-success.spellscape-disabled,
+.spellscape-btn-success[disabled],
+fieldset[disabled] .spellscape-btn-success,
+.spellscape-btn-success.spellscape-disabled:hover,
+.spellscape-btn-success[disabled]:hover,
+fieldset[disabled] .spellscape-btn-success:hover,
+.spellscape-btn-success.spellscape-disabled:focus,
+.spellscape-btn-success[disabled]:focus,
+fieldset[disabled] .spellscape-btn-success:focus,
+.spellscape-btn-success.spellscape-disabled.spellscape-focus,
+.spellscape-btn-success[disabled].spellscape-focus,
+fieldset[disabled] .spellscape-btn-success.spellscape-focus,
+.spellscape-btn-success.spellscape-disabled:active,
+.spellscape-btn-success[disabled]:active,
+fieldset[disabled] .spellscape-btn-success:active,
+.spellscape-btn-success.spellscape-disabled.spellscape-active,
+.spellscape-btn-success[disabled].spellscape-active,
+fieldset[disabled] .spellscape-btn-success.spellscape-active {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.spellscape-btn-success .spellscape-badge {
+  color: #5cb85c;
+  background-color: #ffffff;
+}
+
+.spellscape-btn-info {
+  color: #ffffff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.spellscape-btn-info:hover,
+.spellscape-btn-info:focus,
+.spellscape-btn-info.spellscape-focus,
+.spellscape-btn-info:active,
+.spellscape-btn-info.spellscape-active,
+.spellscape-open > .spellscape-dropdown-toggle.spellscape-btn-info {
+  color: #ffffff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+
+.spellscape-btn-info:active,
+.spellscape-btn-info.spellscape-active,
+.spellscape-open > .spellscape-dropdown-toggle.spellscape-btn-info {
+  background-image: none;
+}
+
+.spellscape-btn-info.spellscape-disabled,
+.spellscape-btn-info[disabled],
+fieldset[disabled] .spellscape-btn-info,
+.spellscape-btn-info.spellscape-disabled:hover,
+.spellscape-btn-info[disabled]:hover,
+fieldset[disabled] .spellscape-btn-info:hover,
+.spellscape-btn-info.spellscape-disabled:focus,
+.spellscape-btn-info[disabled]:focus,
+fieldset[disabled] .spellscape-btn-info:focus,
+.spellscape-btn-info.spellscape-disabled.spellscape-focus,
+.spellscape-btn-info[disabled].spellscape-focus,
+fieldset[disabled] .spellscape-btn-info.spellscape-focus,
+.spellscape-btn-info.spellscape-disabled:active,
+.spellscape-btn-info[disabled]:active,
+fieldset[disabled] .spellscape-btn-info:active,
+.spellscape-btn-info.spellscape-disabled.spellscape-active,
+.spellscape-btn-info[disabled].spellscape-active,
+fieldset[disabled] .spellscape-btn-info.spellscape-active {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.spellscape-btn-info .spellscape-badge {
+  color: #5bc0de;
+  background-color: #ffffff;
+}
+
+.spellscape-btn-warning {
+  color: #ffffff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+.spellscape-btn-warning:hover,
+.spellscape-btn-warning:focus,
+.spellscape-btn-warning.spellscape-focus,
+.spellscape-btn-warning:active,
+.spellscape-btn-warning.spellscape-active,
+.spellscape-open > .spellscape-dropdown-toggle.spellscape-btn-warning {
+  color: #ffffff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+
+.spellscape-btn-warning:active,
+.spellscape-btn-warning.spellscape-active,
+.spellscape-open > .spellscape-dropdown-toggle.spellscape-btn-warning {
+  background-image: none;
+}
+
+.spellscape-btn-warning.spellscape-disabled,
+.spellscape-btn-warning[disabled],
+fieldset[disabled] .spellscape-btn-warning,
+.spellscape-btn-warning.spellscape-disabled:hover,
+.spellscape-btn-warning[disabled]:hover,
+fieldset[disabled] .spellscape-btn-warning:hover,
+.spellscape-btn-warning.spellscape-disabled:focus,
+.spellscape-btn-warning[disabled]:focus,
+fieldset[disabled] .spellscape-btn-warning:focus,
+.spellscape-btn-warning.spellscape-disabled.spellscape-focus,
+.spellscape-btn-warning[disabled].spellscape-focus,
+fieldset[disabled] .spellscape-btn-warning.spellscape-focus,
+.spellscape-btn-warning.spellscape-disabled:active,
+.spellscape-btn-warning[disabled]:active,
+fieldset[disabled] .spellscape-btn-warning:active,
+.spellscape-btn-warning.spellscape-disabled.spellscape-active,
+.spellscape-btn-warning[disabled].spellscape-active,
+fieldset[disabled] .spellscape-btn-warning.spellscape-active {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+.spellscape-btn-warning .spellscape-badge {
+  color: #f0ad4e;
+  background-color: #ffffff;
+}
+
+.spellscape-btn-danger {
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.spellscape-btn-danger:hover,
+.spellscape-btn-danger:focus,
+.spellscape-btn-danger.spellscape-focus,
+.spellscape-btn-danger:active,
+.spellscape-btn-danger.spellscape-active,
+.spellscape-open > .spellscape-dropdown-toggle.spellscape-btn-danger {
+  color: #ffffff;
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+
+.spellscape-btn-danger:active,
+.spellscape-btn-danger.spellscape-active,
+.spellscape-open > .spellscape-dropdown-toggle.spellscape-btn-danger {
+  background-image: none;
+}
+
+.spellscape-btn-danger.spellscape-disabled,
+.spellscape-btn-danger[disabled],
+fieldset[disabled] .spellscape-btn-danger,
+.spellscape-btn-danger.spellscape-disabled:hover,
+.spellscape-btn-danger[disabled]:hover,
+fieldset[disabled] .spellscape-btn-danger:hover,
+.spellscape-btn-danger.spellscape-disabled:focus,
+.spellscape-btn-danger[disabled]:focus,
+fieldset[disabled] .spellscape-btn-danger:focus,
+.spellscape-btn-danger.spellscape-disabled.spellscape-focus,
+.spellscape-btn-danger[disabled].spellscape-focus,
+fieldset[disabled] .spellscape-btn-danger.spellscape-focus,
+.spellscape-btn-danger.spellscape-disabled:active,
+.spellscape-btn-danger[disabled]:active,
+fieldset[disabled] .spellscape-btn-danger:active,
+.spellscape-btn-danger.spellscape-disabled.spellscape-active,
+.spellscape-btn-danger[disabled].spellscape-active,
+fieldset[disabled] .spellscape-btn-danger.spellscape-active {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+
+.spellscape-btn-danger .spellscape-badge {
+  color: #d9534f;
+  background-color: #ffffff;
+}
+
+.spellscape-btn-link {
+  color: #337ab7;
+  font-weight: normal;
+  border-radius: 0;
+}
+
+.spellscape-btn-link,
+.spellscape-btn-link:active,
+.spellscape-btn-link.spellscape-active,
+.spellscape-btn-link[disabled],
+fieldset[disabled] .spellscape-btn-link {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.spellscape-btn-link,
+.spellscape-btn-link:hover,
+.spellscape-btn-link:focus,
+.spellscape-btn-link:active {
+  border-color: transparent;
+}
+
+.spellscape-btn-link:hover,
+.spellscape-btn-link:focus {
+  color: #23527c;
+  text-decoration: underline;
+  background-color: transparent;
+}
+
+.spellscape-btn-link[disabled]:hover,
+fieldset[disabled] .spellscape-btn-link:hover,
+.spellscape-btn-link[disabled]:focus,
+fieldset[disabled] .spellscape-btn-link:focus {
+  color: #777777;
+  text-decoration: none;
+}
+
+.spellscape-btn-lg,
+.spellscape-btn-group-lg > .spellscape-btn {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
+.spellscape-btn-sm,
+.spellscape-btn-group-sm > .spellscape-btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.spellscape-btn-xs,
+.spellscape-btn-group-xs > .spellscape-btn {
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+.spellscape-btn-block {
+  display: block;
+  width: 100%;
+}
+
+.spellscape-btn-block + .spellscape-btn-block {
+  margin-top: 5px;
+}
+
+input[type="submit"].spellscape-btn-block,
+input[type="reset"].spellscape-btn-block,
+input[type="button"].spellscape-btn-block {
+  width: 100%;
+}
+
+.spellscape-fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+.spellscape-fade.spellscape-in {
+  opacity: 1;
+}
+
+.spellscape-collapse {
+  display: none;
+}
+
+.spellscape-collapse.spellscape-in {
+  display: block;
+}
+
+tr.spellscape-collapse.spellscape-in {
+  display: table-row;
+}
+
+tbody.spellscape-collapse.spellscape-in {
+  display: table-row-group;
+}
+
+.spellscape-collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  -o-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+.spellscape-btn-group,
+.spellscape-btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.spellscape-btn-group > .spellscape-btn,
+.spellscape-btn-group-vertical > .spellscape-btn {
+  position: relative;
+  float: left;
+}
+
+.spellscape-btn-group > .spellscape-btn:hover,
+.spellscape-btn-group-vertical > .spellscape-btn:hover,
+.spellscape-btn-group > .spellscape-btn:focus,
+.spellscape-btn-group-vertical > .spellscape-btn:focus,
+.spellscape-btn-group > .spellscape-btn:active,
+.spellscape-btn-group-vertical > .spellscape-btn:active,
+.spellscape-btn-group > .spellscape-btn.spellscape-active,
+.spellscape-btn-group-vertical > .spellscape-btn.spellscape-active {
+  z-index: 2;
+}
+
+.spellscape-btn-group .spellscape-btn + .spellscape-btn,
+.spellscape-btn-group .spellscape-btn + .spellscape-btn-group,
+.spellscape-btn-group .spellscape-btn-group + .spellscape-btn,
+.spellscape-btn-group .spellscape-btn-group + .spellscape-btn-group {
+  margin-left: -1px;
+}
+
+.spellscape-btn-toolbar {
+  margin-left: -5px;
+}
+
+.spellscape-btn-toolbar .spellscape-btn-group,
+.spellscape-btn-toolbar .spellscape-input-group {
+  float: left;
+}
+
+.spellscape-btn-toolbar > .spellscape-btn,
+.spellscape-btn-toolbar > .spellscape-btn-group,
+.spellscape-btn-toolbar > .spellscape-input-group {
+  margin-left: 5px;
+}
+
+.spellscape-btn-group > .spellscape-btn:not(:first-child):not(:last-child):not(.spellscape-dropdown-toggle) {
+  border-radius: 0;
+}
+
+.spellscape-btn-group > .spellscape-btn:first-child {
+  margin-left: 0;
+}
+
+.spellscape-btn-group > .spellscape-btn:first-child:not(:last-child):not(.spellscape-dropdown-toggle) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.spellscape-btn-group > .spellscape-btn:last-child:not(:first-child),
+.spellscape-btn-group > .spellscape-dropdown-toggle:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.spellscape-btn-group > .spellscape-btn-group {
+  float: left;
+}
+
+.spellscape-btn-group > .spellscape-btn-group:not(:first-child):not(:last-child) > .spellscape-btn {
+  border-radius: 0;
+}
+
+.spellscape-btn-group > .spellscape-btn-group:first-child:not(:last-child) > .spellscape-btn:last-child,
+.spellscape-btn-group > .spellscape-btn-group:first-child:not(:last-child) > .spellscape-dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.spellscape-btn-group > .spellscape-btn-group:last-child:not(:first-child) > .spellscape-btn:first-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.spellscape-btn-group .spellscape-dropdown-toggle:active,
+.spellscape-btn-group.spellscape-open .spellscape-dropdown-toggle {
+  outline: 0;
+}
+
+.spellscape-btn-group > .spellscape-btn + .spellscape-dropdown-toggle {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.spellscape-btn-group > .spellscape-btn-lg + .spellscape-dropdown-toggle {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.spellscape-btn-group.spellscape-open .spellscape-dropdown-toggle {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.spellscape-btn-group.spellscape-open .spellscape-dropdown-toggle.spellscape-btn-link {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.spellscape-btn .spellscape-caret {
+  margin-left: 0;
+}
+
+.spellscape-btn-lg .spellscape-caret {
+  border-width: 5px 5px 0;
+  border-bottom-width: 0;
+}
+
+.spellscape-dropup .spellscape-btn-lg .spellscape-caret {
+  border-width: 0 5px 5px;
+}
+
+.spellscape-btn-group-vertical > .spellscape-btn,
+.spellscape-btn-group-vertical > .spellscape-btn-group,
+.spellscape-btn-group-vertical > .spellscape-btn-group > .spellscape-btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+.spellscape-btn-group-vertical > .spellscape-btn-group > .spellscape-btn {
+  float: none;
+}
+
+.spellscape-btn-group-vertical > .spellscape-btn + .spellscape-btn,
+.spellscape-btn-group-vertical > .spellscape-btn + .spellscape-btn-group,
+.spellscape-btn-group-vertical > .spellscape-btn-group + .spellscape-btn,
+.spellscape-btn-group-vertical > .spellscape-btn-group + .spellscape-btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+
+.spellscape-btn-group-vertical > .spellscape-btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.spellscape-btn-group-vertical > .spellscape-btn:first-child:not(:last-child) {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.spellscape-btn-group-vertical > .spellscape-btn:last-child:not(:first-child) {
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.spellscape-btn-group-vertical > .spellscape-btn-group:not(:first-child):not(:last-child) > .spellscape-btn {
+  border-radius: 0;
+}
+
+.spellscape-btn-group-vertical > .spellscape-btn-group:first-child:not(:last-child) > .spellscape-btn:last-child,
+.spellscape-btn-group-vertical > .spellscape-btn-group:first-child:not(:last-child) > .spellscape-dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.spellscape-btn-group-vertical > .spellscape-btn-group:last-child:not(:first-child) > .spellscape-btn:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.spellscape-btn-group-justified {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+
+.spellscape-btn-group-justified > .spellscape-btn,
+.spellscape-btn-group-justified > .spellscape-btn-group {
+  float: none;
+  display: table-cell;
+  width: 1%;
+}
+
+.spellscape-btn-group-justified > .spellscape-btn-group .spellscape-btn {
+  width: 100%;
+}
+
+.spellscape-btn-group-justified > .spellscape-btn-group .spellscape-dropdown-menu {
+  left: auto;
+}
+
+[data-toggle="buttons"] > .spellscape-btn input[type="radio"],
+[data-toggle="buttons"] > .spellscape-btn-group > .spellscape-btn input[type="radio"],
+[data-toggle="buttons"] > .spellscape-btn input[type="checkbox"],
+[data-toggle="buttons"] > .spellscape-btn-group > .spellscape-btn input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+.spellscape-input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+
+.spellscape-input-group[class*="col-"] {
+  float: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.spellscape-input-group .spellscape-form-control {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.spellscape-input-group-lg > .spellscape-form-control,
+.spellscape-input-group-lg > .spellscape-input-group-addon,
+.spellscape-input-group-lg > .spellscape-input-group-btn > .spellscape-btn {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
+select.spellscape-input-group-lg > .spellscape-form-control,
+select.spellscape-input-group-lg > .spellscape-input-group-addon,
+select.spellscape-input-group-lg > .spellscape-input-group-btn > .spellscape-btn {
+  height: 46px;
+  line-height: 46px;
+}
+
+textarea.spellscape-input-group-lg > .spellscape-form-control,
+textarea.spellscape-input-group-lg > .spellscape-input-group-addon,
+textarea.spellscape-input-group-lg > .spellscape-input-group-btn > .spellscape-btn,
+select[multiple].spellscape-input-group-lg > .spellscape-form-control,
+select[multiple].spellscape-input-group-lg > .spellscape-input-group-addon,
+select[multiple].spellscape-input-group-lg > .spellscape-input-group-btn > .spellscape-btn {
+  height: auto;
+}
+
+.spellscape-input-group-sm > .spellscape-form-control,
+.spellscape-input-group-sm > .spellscape-input-group-addon,
+.spellscape-input-group-sm > .spellscape-input-group-btn > .spellscape-btn {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
+select.spellscape-input-group-sm > .spellscape-form-control,
+select.spellscape-input-group-sm > .spellscape-input-group-addon,
+select.spellscape-input-group-sm > .spellscape-input-group-btn > .spellscape-btn {
+  height: 30px;
+  line-height: 30px;
+}
+
+textarea.spellscape-input-group-sm > .spellscape-form-control,
+textarea.spellscape-input-group-sm > .spellscape-input-group-addon,
+textarea.spellscape-input-group-sm > .spellscape-input-group-btn > .spellscape-btn,
+select[multiple].spellscape-input-group-sm > .spellscape-form-control,
+select[multiple].spellscape-input-group-sm > .spellscape-input-group-addon,
+select[multiple].spellscape-input-group-sm > .spellscape-input-group-btn > .spellscape-btn {
+  height: auto;
+}
+
+.spellscape-input-group-addon,
+.spellscape-input-group-btn,
+.spellscape-input-group .spellscape-form-control {
+  display: table-cell;
+}
+
+.spellscape-input-group-addon:not(:first-child):not(:last-child),
+.spellscape-input-group-btn:not(:first-child):not(:last-child),
+.spellscape-input-group .spellscape-form-control:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.spellscape-input-group-addon,
+.spellscape-input-group-btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.spellscape-input-group-addon {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555555;
+  text-align: center;
+  background-color: #eeeeee;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.spellscape-input-group-addon.spellscape-input-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.spellscape-input-group-addon.spellscape-input-lg {
+  padding: 10px 16px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+.spellscape-input-group-addon input[type="radio"],
+.spellscape-input-group-addon input[type="checkbox"] {
+  margin-top: 0;
+}
+
+.spellscape-input-group .spellscape-form-control:first-child,
+.spellscape-input-group-addon:first-child,
+.spellscape-input-group-btn:first-child > .spellscape-btn,
+.spellscape-input-group-btn:first-child > .spellscape-btn-group > .spellscape-btn,
+.spellscape-input-group-btn:first-child > .spellscape-dropdown-toggle,
+.spellscape-input-group-btn:last-child > .spellscape-btn:not(:last-child):not(.spellscape-dropdown-toggle),
+.spellscape-input-group-btn:last-child > .spellscape-btn-group:not(:last-child) > .spellscape-btn {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.spellscape-input-group-addon:first-child {
+  border-right: 0;
+}
+
+.spellscape-input-group .spellscape-form-control:last-child,
+.spellscape-input-group-addon:last-child,
+.spellscape-input-group-btn:last-child > .spellscape-btn,
+.spellscape-input-group-btn:last-child > .spellscape-btn-group > .spellscape-btn,
+.spellscape-input-group-btn:last-child > .spellscape-dropdown-toggle,
+.spellscape-input-group-btn:first-child > .spellscape-btn:not(:first-child),
+.spellscape-input-group-btn:first-child > .spellscape-btn-group:not(:first-child) > .spellscape-btn {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.spellscape-input-group-addon:last-child {
+  border-left: 0;
+}
+
+.spellscape-input-group-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+}
+
+.spellscape-input-group-btn > .spellscape-btn {
+  position: relative;
+}
+
+.spellscape-input-group-btn > .spellscape-btn + .spellscape-btn {
+  margin-left: -1px;
+}
+
+.spellscape-input-group-btn > .spellscape-btn:hover,
+.spellscape-input-group-btn > .spellscape-btn:focus,
+.spellscape-input-group-btn > .spellscape-btn:active {
+  z-index: 2;
+}
+
+.spellscape-input-group-btn:first-child > .spellscape-btn,
+.spellscape-input-group-btn:first-child > .spellscape-btn-group {
+  margin-right: -1px;
+}
+
+.spellscape-input-group-btn:last-child > .spellscape-btn,
+.spellscape-input-group-btn:last-child > .spellscape-btn-group {
+  margin-left: -1px;
+}
+
+.spellscape-embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.spellscape-embed-responsive .spellscape-embed-responsive-item,
+.spellscape-embed-responsive iframe,
+.spellscape-embed-responsive embed,
+.spellscape-embed-responsive object,
+.spellscape-embed-responsive video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+
+.spellscape-embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+
+.spellscape-embed-responsive-4by3 {
+  padding-bottom: 75%;
+}
+
+.spellscape-close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+
+.spellscape-close:hover,
+.spellscape-close:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+button.spellscape-close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+.spellscape-modal-open {
+  overflow: hidden;
+}
+
+.spellscape-modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+
+.spellscape-modal.spellscape-fade .spellscape-modal-dialog {
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  -o-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+.spellscape-modal.spellscape-in .spellscape-modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.spellscape-modal-open .spellscape-modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.spellscape-modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+
+.spellscape-modal-content {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  outline: 0;
+}
+
+.spellscape-modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000000;
+}
+
+.spellscape-modal-backdrop.spellscape-fade {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.spellscape-modal-backdrop.spellscape-in {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.spellscape-modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  min-height: 16.42857143px;
+}
+
+.spellscape-modal-header .spellscape-close {
+  margin-top: -2px;
+}
+
+.spellscape-modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+
+.spellscape-modal-body {
+  position: relative;
+  padding: 15px;
+}
+
+.spellscape-modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+
+.spellscape-modal-footer .spellscape-btn + .spellscape-btn {
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+
+.spellscape-modal-footer .spellscape-btn-group .spellscape-btn + .spellscape-btn {
+  margin-left: -1px;
+}
+
+.spellscape-modal-footer .spellscape-btn-block + .spellscape-btn-block {
+  margin-left: 0;
+}
+
+.spellscape-modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+@media (min-width: 768px) {
+  .spellscape-modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+
+  .spellscape-modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+
+  .spellscape-modal-sm {
+    width: 300px;
+  }
+}
+
+@media (min-width: 992px) {
+  .spellscape-modal-lg {
+    width: 900px;
+  }
+}
+
+.spellscape-clearfix:before,
+.spellscape-clearfix:after,
+.spellscape-form-horizontal .spellscape-form-group:before,
+.spellscape-form-horizontal .spellscape-form-group:after,
+.spellscape-btn-toolbar:before,
+.spellscape-btn-toolbar:after,
+.spellscape-btn-group-vertical > .spellscape-btn-group:before,
+.spellscape-btn-group-vertical > .spellscape-btn-group:after,
+.spellscape-modal-footer:before,
+.spellscape-modal-footer:after {
+  content: " ";
+  display: table;
+}
+
+.spellscape-clearfix:after,
+.spellscape-form-horizontal .spellscape-form-group:after,
+.spellscape-btn-toolbar:after,
+.spellscape-btn-group-vertical > .spellscape-btn-group:after,
+.spellscape-modal-footer:after {
+  clear: both;
+}
+
+.spellscape-center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spellscape-pull-right {
+  float: right !important;
+}
+
+.spellscape-pull-left {
+  float: left !important;
+}
+
+.spellscape-hide {
+  display: none !important;
+}
+
+.spellscape-show {
+  display: block !important;
+}
+
+.spellscape-invisible {
+  visibility: hidden;
+}
+
+.spellscape-text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.spellscape-hidden {
+  display: none !important;
+}
+
+.spellscape-affix {
+  position: fixed;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+.spellscape-visible-xs,
+.spellscape-visible-sm,
+.spellscape-visible-md,
+.spellscape-visible-lg {
+  display: none !important;
+}
+
+.spellscape-visible-xs-block,
+.spellscape-visible-xs-inline,
+.spellscape-visible-xs-inline-block,
+.spellscape-visible-sm-block,
+.spellscape-visible-sm-inline,
+.spellscape-visible-sm-inline-block,
+.spellscape-visible-md-block,
+.spellscape-visible-md-inline,
+.spellscape-visible-md-inline-block,
+.spellscape-visible-lg-block,
+.spellscape-visible-lg-inline,
+.spellscape-visible-lg-inline-block {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .spellscape-visible-xs {
+    display: block !important;
+  }
+
+  table.spellscape-visible-xs {
+    display: table;
+  }
+
+  tr.spellscape-visible-xs {
+    display: table-row !important;
+  }
+
+  th.spellscape-visible-xs,
+  td.spellscape-visible-xs {
+    display: table-cell !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .spellscape-visible-xs-block {
+    display: block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .spellscape-visible-xs-inline {
+    display: inline !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .spellscape-visible-xs-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .spellscape-visible-sm {
+    display: block !important;
+  }
+
+  table.spellscape-visible-sm {
+    display: table;
+  }
+
+  tr.spellscape-visible-sm {
+    display: table-row !important;
+  }
+
+  th.spellscape-visible-sm,
+  td.spellscape-visible-sm {
+    display: table-cell !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .spellscape-visible-sm-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .spellscape-visible-sm-inline {
+    display: inline !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .spellscape-visible-sm-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .spellscape-visible-md {
+    display: block !important;
+  }
+
+  table.spellscape-visible-md {
+    display: table;
+  }
+
+  tr.spellscape-visible-md {
+    display: table-row !important;
+  }
+
+  th.spellscape-visible-md,
+  td.spellscape-visible-md {
+    display: table-cell !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .spellscape-visible-md-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .spellscape-visible-md-inline {
+    display: inline !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .spellscape-visible-md-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .spellscape-visible-lg {
+    display: block !important;
+  }
+
+  table.spellscape-visible-lg {
+    display: table;
+  }
+
+  tr.spellscape-visible-lg {
+    display: table-row !important;
+  }
+
+  th.spellscape-visible-lg,
+  td.spellscape-visible-lg {
+    display: table-cell !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .spellscape-visible-lg-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .spellscape-visible-lg-inline {
+    display: inline !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .spellscape-visible-lg-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .spellscape-hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .spellscape-hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .spellscape-hidden-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .spellscape-hidden-lg {
+    display: none !important;
+  }
+}
+
+.spellscape-visible-print {
+  display: none !important;
+}
+
+@media print {
+  .spellscape-visible-print {
+    display: block !important;
+  }
+
+  table.spellscape-visible-print {
+    display: table;
+  }
+
+  tr.spellscape-visible-print {
+    display: table-row !important;
+  }
+
+  th.spellscape-visible-print,
+  td.spellscape-visible-print {
+    display: table-cell !important;
+  }
+}
+
+.spellscape-visible-print-block {
+  display: none !important;
+}
+
+@media print {
+  .spellscape-visible-print-block {
+    display: block !important;
+  }
+}
+
+.spellscape-visible-print-inline {
+  display: none !important;
+}
+
+@media print {
+  .spellscape-visible-print-inline {
+    display: inline !important;
+  }
+}
+
+.spellscape-visible-print-inline-block {
+  display: none !important;
+}
+
+@media print {
+  .spellscape-visible-print-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media print {
+  .spellscape-hidden-print {
+    display: none !important;
+  }
+}
