@@ -28,14 +28,14 @@
 <script type="text/JavaScript">
   $(document).ready(function(){
 
+    //changeAngularLanguage();
+
     $('#spellScapeSave').click(function(){
       var input = document.getElementById("input_text").value;
       var translated_text = document.getElementById("translated_text").value;
-      localStorage.setItem(input,translated_text);
-      console.log("stored value is = "+localStorage.getItem(input));
-      // console.log("hey there!");
+      angular.element('select').scope().updateLanguage({input:translated_text});
+      console.log("save successful!");
     });
-
 });
 </script>
 <!-- END FOR TRANSLATION -->

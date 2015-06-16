@@ -3,20 +3,19 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse){
 	switch(message.type){
 		case "highlight":
 
-			// console.log(chrome.extension.getURL("spellscape/spellscape.html"));
+			//Changing the page's Language to the Selected Translated Language
+			document.getElementById("langSelect").value="string:"+message.lang; //Change the page's language dropdown
+			// [NOTE] - Changing of page's angular language done in spellscape.html once loaded. Extension doesn't have rights to angular
+
 			var translate_elements = document.querySelectorAll("[translate]");
 
 			if(translate_elements.length){
-
-				//Modal HTML
-				// $('body').append(chrome.extension.getURL("spellscape/spellscape.html"));
 
 				$.ajax({
 				    url: chrome.extension.getURL("spellscape/spellscape.html"),
 				    success: function (data) { $('body').append(data); },
 				    dataType: 'html'
 				});
-
 
 				//Hyperlinking Translate Strings to Modal
 				for(var i=0;i<translate_elements.length;i++){
