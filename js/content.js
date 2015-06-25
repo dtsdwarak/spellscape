@@ -5,7 +5,9 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse){
 
 			//Changing the page's Language to the Selected Translated Language
 			document.getElementById("langSelect").value="string:"+message.lang; //Change the page's language dropdown
-			// [NOTE] - Changing of page's angular language done in spellscape.html once loaded. Extension doesn't have rights to angular
+
+			//Change the page's Angular language
+			window.postMessage({ type: "CHANGE_PAGE_LANGUAGE", text: "Hello from the webpage!" }, "*");
 
 			var translate_elements = document.querySelectorAll("[translate]");
 
@@ -19,9 +21,13 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse){
 
 				//Hyperlinking Translate Strings to Modal
 				for(var i=0;i<translate_elements.length;i++){
-					translate_elements[i].innerHTML='<a href="#" data-target="#spellScapeModal" data-toggle="modal" class="forTranslation">' + translate_elements[i].innerText + '</a>';
+					//console.log(translate_elements[i]);
+					// translate_elements[i].removeAttribute("translate");
+					translate_elements[i].innerHTML='<a href="#" data-target="#spellScapeModal" data-toggle="modal" class="forTranslation ng-scope">' + translate_elements[i].innerText + '</a>';
 				}
 				$(".forTranslation").click(function(){
+					//this).removeAttr("href");
+					//console.log("This text value = "+this.text);
 					$("#input_text").val(this.text);
 					//console.log("the value is " + this.text);
 				});

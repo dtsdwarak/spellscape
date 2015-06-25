@@ -28,13 +28,13 @@
 <script type="text/JavaScript">
   $(document).ready(function(){
 
-    //changeAngularLanguage();
-
     $('#spellScapeSave').click(function(){
-      var input = document.getElementById("input_text").value;
-      var translated_text = document.getElementById("translated_text").value;
-      angular.element('select').scope().updateLanguage({input:translated_text});
-      console.log("save successful!");
+      // var input = document.getElementById("input_text").value;
+      // var translated_text = document.getElementById("translated_text").value;
+      
+      // console.log("input_text = " + input);
+      // console.log("translated_text = " + translated_text);
+      window.postMessage({ type: "SAVE_TRANSLATION", text: "Hello from the webpage!" }, "*");
     });
 });
 </script>

@@ -41,5 +41,8 @@
     "activeTab",
     "https://ajax.googleapis.com/",
     "storage"
-  ]
+  ],
+  "externally_connectable": {
+    "matches": ["http://localhost/*"]
+  }
 }
