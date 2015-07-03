@@ -9,33 +9,26 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse){
 			//Change the page's Angular language
 			window.postMessage({ type: "CHANGE_PAGE_LANGUAGE", text: "Hello from the webpage!" }, "*");
 
-			var translate_elements = document.querySelectorAll("[translate]");
+			// var translate_elements = document.querySelectorAll("[translate]");
+			var strings = $('[translate]');
+			console.log(strings);
+			if(strings.length){
 
-			if(translate_elements.length){
-
+				//Load page content onto browser page for Modal
 				$.ajax({
 				    url: chrome.extension.getURL("spellscape/spellscape.html"),
 				    success: function (data) { $('body').append(data); },
 				    dataType: 'html'
 				});
 
-				//Hyperlinking Translate Strings to Modal
-				for(var i=0;i<translate_elements.length;i++){
-					//console.log(translate_elements[i]);
-					// translate_elements[i].removeAttribute("translate");
-					translate_elements[i].innerHTML='<a href="#" data-target="#spellScapeModal" data-toggle="modal" class="forTranslation ng-scope">' + translate_elements[i].innerText + '</a>';
-				}
+				//Pass message to Browser Page
+				window.postMessage({ type: "HIGHLIGHT_TRANSLATE", text: "Hello from the webpage!" }, "*");
+
+				//For Modal Popup Input field
 				$(".forTranslation").click(function(){
-					//this).removeAttr("href");
-					//console.log("This text value = "+this.text);
 					$("#input_text").val(this.text);
-					//console.log("the value is " + this.text);
 				});
-				
-				//Yellow Linking
-				for(var i=0;i<translate_elements.length;i++){
-					translate_elements[i].style.backgroundColor="yellow";
-				}
+
 				alert("Translate these strings please");
 			}
 			else

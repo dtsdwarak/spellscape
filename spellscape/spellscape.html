@@ -29,11 +29,7 @@
   $(document).ready(function(){
 
     $('#spellScapeSave').click(function(){
-      // var input = document.getElementById("input_text").value;
-      // var translated_text = document.getElementById("translated_text").value;
-      
-      // console.log("input_text = " + input);
-      // console.log("translated_text = " + translated_text);
+      //Save Translation Function handled by Loaded Page - Localstorage functionality
       window.postMessage({ type: "SAVE_TRANSLATION", text: "Hello from the webpage!" }, "*");
     });
 });
