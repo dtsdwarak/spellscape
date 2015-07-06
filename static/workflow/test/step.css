@@ -1,0 +1,102 @@
+.workflow {
+    border: 1px solid #cccccc;
+    margin: 10px;
+    padding: 20px;
+}
+
+.workflow a {
+    display:block;
+    color:#000;
+    text-decoration:none;
+    cursor: inherit;
+}
+
+.workflow table {
+    width: 100%;
+    height:100%;
+    border-collapse: separate;//override materialize css from collapse
+}
+
+
+.workflow td {
+    text-align: center;
+    vertical-align: top;
+    padding: 0px 2px;
+    border-radius: 0px; //override materialize css from 2px
+}
+
+.workflow tr.extend {
+    height:100%;
+}
+
+.workflow tr.extend td.lleft {
+    border-right: 1px solid #666;
+}
+
+.workflow tr.extend td.lright {
+    border-left: 1px solid #666;
+}
+
+.workflow tr.lines td.line {
+    width: 1px;
+    height: 20px;
+}
+
+.workflow tr.lines td.ltop {
+    border-top: 2px solid #666;
+}
+
+.workflow tr.lines td.lbottom {
+    border-bottom: 2px solid #666;
+}
+
+.workflow tr.lines td.lleft {
+    border-right: 1px solid #666;
+}
+
+.workflow tr.lines td.lright {
+    border-left: 1px solid #666;
+}
+
+
+.workflow div.node {
+    cursor: default;
+    background-color: #eee;
+    border: 1px solid #666;
+    display: inline-block;
+    padding: 0 4px;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 6px #888888;
+    -moz-border-radius: 8px;
+    -moz-box-shadow: 4px 4px 6px #888888;
+    -webkit-border-radius: 8px;
+    -webkit-box-shadow: 4px 4px 6px #888888;
+}
+
+.workflow div.bnode {
+	width: 50px;
+    height: 50px;
+    background-color: yellow;
+    /* Rotate div */
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    padding: 0px;
+    overflow: hidden;
+}
+
+.workflow div.bnode a {
+    transform: rotate(-45deg);
+}
+
+.workflow div.hasChildren {
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+.workflow div.node:hover {
+    background-color: #bbb;
+}

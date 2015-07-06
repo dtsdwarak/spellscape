@@ -1,0 +1,34 @@
+<div ng-if="field.getValue('Widget')=='Singleline' || field.getValue('Widget')=='Number' || field.getValue('Widget')=='Currency'">
+    <input id="{{ field.getValue('Id')}}_lbl" class="resizeMaterialInput" type="text" required='true' readonly>
+</div>
+<div ng-if="field.getValue('Widget')=='TextFormula' || field.getValue('Widget')=='NumberFormula' || field.getValue('Widget')=='DateFormula'">
+    <input id="{{ field.getValue('Id')}}_lbl" class="resizeMaterialInput" type="text" required disabled>
+</div>
+<div ng-if="field.getValue('Widget')=='Date' || field.getValue('Widget')=='Datetime'">
+    <input type="date" class="datepicker resizeMaterialInput" required readonly>
+</div>
+<div ng-if="field.getValue('Widget')=='Lookup' || field.getValue('Widget')=='Dropdown'">
+    <select disabled>
+        <option value="" disabled selected>Choose your option</option>
+    </select>
+</div>
+<div ng-if="field.getValue('Widget')=='Multiline'">
+    <textarea class="materialize-textarea resizeMaterialInput" readonly></textarea>
+</div>
+<div ng-if="field.getValue('Widget')=='Yesno'">
+    <div class="switch space-bottom40">
+        <label>
+            <input type="checkbox">
+            <span class="lever"></span>
+        </label>
+    </div>
+</div>
+<div ng-if="field.getValue('Widget')=='Attachment'">
+    <a class="waves-effect waves-light btn attachment">Attach Files</a>
+</div>
+<div ng-if="field.getValue('Widget')=='Users'">
+    <select disabled>
+        <option value="" disabled selected>List of users</option>
+    </select>
+</div>
+</div>

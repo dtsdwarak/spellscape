@@ -1,0 +1,41 @@
+<lazy-style href="form/css/form.prop.css" />
+<div ng-controller="FormController" id="form">
+    <div class="form">
+        <div class="row">
+            <div class="col offset-l1 l10">
+                <!--code to show fields from json-->
+                <div class="row form-container">
+                    <div style="col l12">
+                        <flow-include url="form/views/form.sidebar.html" class="col l3 m2" pushpin></flow-include>
+                        <div class="white col row card-content offset-l3 l7 m9 fields padding-right-null">
+                            <!--html code to draw the top section of form designer-->
+                            <!--html code to draw the form title-->
+                            <div class="col l12 form_title padding-left-null">
+                                <input id="sectionheading" class="title" onclick="this.focus();this.select()" type="text" ng-model="formData.getterSetter('Name')" ng-model-options="{getterSetter: true}">
+                            </div>
+                            <!--end of html code to draw the form title-->
+                            <!--End of html code to draw the top section of the form designer-->
+                            <div class="col l12 padding-null shadow-top-left-right white">
+                                <div class='section-container' ng-repeat="section in sections = (formData.getList('Form','Index'))">
+                                    <flow-include url="form/views/form.field.sections.html"></flow-include>
+                                </div>
+                            </div>
+                        </div>
+                        <!--html code to draw the form description-->
+                        <div class="col l2 shortDesc-container padding-null">
+                            <div class="input-field col l12">
+                                <textarea id="shortDesc" class="font-size12 materialize-textarea shortDesc gap-top10" ng-model="formData.getterSetter('ProcessDescription')" ng-model-options="{ getterSetter: true }"></textarea>
+                                <label for="shortDesc" class="active">Short Description of the form</label>
+                            </div>
+                        </div>
+                        <!--end of html code to draw the form description-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end of code to show fields from json-->
+    </div>
+</div>
+<div id="form-container">
+    <ng-include src="'form/views/form.properties.html'"></ng-include>
+</div>

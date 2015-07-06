@@ -1,0 +1,22 @@
+<!--beginning of code for sidebar-->
+<div class="padding-null">
+    <div class="sidebar col l12 sidebar-out sidebar-in">
+        <div class="row margin-bottom-null">
+            <div class="col l12 gap-bottom10">
+                <h6 class="uppercase gap-top20">Add Fields</h6>
+            </div>
+        </div>
+        <!--code to draw all the field types in side bar when the selected param is null-->
+        <div class="row gap-bottom10" ng-repeat="fieldType in fieldTypes">
+            <div class="inline col l6" ng-repeat="field in fieldType" kf-draggable=".sortable" ng-class-even="'padding-left-null'">
+                <div class="field-type col" id="{{field.class}}" ng-if="field.class!='Table' && field.class!='Section'" ng-click="addField(field.class)">
+                    <div class="icon icon-{{field.class}} inline"></div>
+                    <div class="type-text inline top">{{field.name}}</div>
+                </div>
+            </div>
+        </div>
+        <!--end of code to draw field types in side bar-->
+    </div>
+    <!--end of code to show all the field properties in side bar-->
+</div>
+<!--end of code for sidebar-->

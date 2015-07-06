@@ -1,0 +1,53 @@
+<table cellpadding="0" cellspacing="0" border="0">
+    <tr class="lines v">
+        <td class="line lleft"></td>
+        <td class="line lright ltop" ng-repeat-start="count in getBranchRange(step)"></td>
+        <td class="line lleft ltop" ng-repeat-end></td>
+        <td class="line lright"></td>
+    </tr>
+    <tr class="branch">
+        <td colspan="2" ng-repeat="branch in step.getList('Branches', 'Index')">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr class="nodes">
+                        <td class="node" colspan="2">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr class="nodes">
+                                    <td class="node">
+                                        <div class="node hasChildren">
+                                            <div class="heading">
+                                                {{ branch.getValue('Index') }}. {{ branch.getValue('Id') }}
+                                            </div>
+                                            <div>
+                                                <a href="" ng-click="deleteBranch(branch)"><i class="fa fa-trash-o fa-fw"></i> Delete</a>
+                                                <a href="" ng-init="btoggle=false" ng-click="btoggle = !btoggle">
+                                                    <i class="fa fa-fw" ng-class="btoggle?'fa-angle-double-up':'fa-angle-double-down'"></i>
+                                                    {{ btoggle?'Less':'More' }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="nodes" ng-show="btoggle">
+                                    <td class="node">
+                                        <ng-include src="'workflow/views/workflow.step.html'"></ng-include>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="extend v">
+                        <td class="line lleft"></td>
+                        <td class="line lright"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr class="lines v">
+        <td class="line lleft"></td>
+        <td class="line lright lbottom" ng-repeat-start="count in getBranchRange(step)"></td>
+        <td class="line lleft lbottom" ng-repeat-end></td>
+        <td class="line lright"></td>
+    </tr>
+</table>

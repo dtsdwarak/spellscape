@@ -1,0 +1,369 @@
+{
+  "Id": "Process001", 
+  "Name": "Travel Expense", 
+  "ProcessDescription": "This process allows employees to apply for travel expense reimbursement get it approved by their supervisors and finance team.", 
+  "FormLayout": "Auto", 
+  "Form": [
+    {
+      "Id": "Section001", 
+      "Name": "Travel Section", 
+      "Type": "Section", 
+      "Index":1,
+      "Hints": "Process Employee expense reimbursements.", 
+      "Fields": [
+        {
+          "Id": "Field001",
+          "Name": "Name", 
+          "Label": "Name",
+          "Type":"Field",
+          "Widget": "Singleline",
+          "Index":2,
+          "Formula": "CreatedBy.FullName",
+          "ErrorMessage":"String validation Error for Field1",
+          "Required": "true",
+          "Validations":[
+            {
+              "Id":"Condition010",
+              "Operator":"Custom",
+              "RHS":"Is Numeric"
+            }
+          ]
+        },
+        {
+          "Id": "Field016", 
+          "Name": "Employees", 
+          "Type":"Field",
+          "Label": "Employees", 
+          "Widget": "Lookup", 
+          "Index":6.1,
+          "LookupProcess":"Master001",
+          "LookupField":"Cell001",
+          "Criteria":[
+            {
+              "Id":"Condition010",
+              "LHS":"Cell002",
+              "Operator":"Greater than",
+              "RHSType":"Value",
+              "RHS":""
+            }
+          ]
+        },
+        {
+          "Id": "Field002", 
+          "Name": "Amount", 
+          "Type":"Field",
+          "Label": "Amount",
+          "Widget": "Number",
+          "Index":1, 
+          "Formula": "CreatedAt",
+          "Validations": [
+            {
+              "Id": "Condition001", 
+              "Operator": "Greater than", 
+              "RHSType": "Field", 
+              "RHS": "Field002",
+              "ErrorMessage":"Custom error message for field"
+            },
+            {
+              "Id": "Condition002", 
+              "Operator": "Less than", 
+              "RHSType": "Value", 
+              "RHS": "10",
+              "ErrorMessage":"Custom error message for field"
+            }
+          ]      
+        }, 
+        {
+          "Id": "Field003", 
+          "Name": "CreatedDay", 
+          "Type":"Field",
+          "Label": "Created Day", 
+          "Widget": "Date", 
+          "Index":3, 
+          "Required": "true"
+        }, 
+        {
+          "Id": "Field023", 
+          "Name": "ModifiedDay", 
+          "Type":"Field",
+          "Label": "Modified Day", 
+          "Widget": "Date", 
+          "Index":3.2, 
+          "Required": "true"
+        }, 
+        {
+          "Id": "Field004", 
+          "Name": "Amount123", 
+          "Type":"Field",
+          "Label": "Amount123", 
+          "Widget": "Number", 
+          "Index":4,
+          "Required": "true", 
+          "ErrorMessage":"Number Validation error message",
+          "Validations": [
+            {
+              "Id": "Condition001", 
+              "Operator": "<", 
+              "RHSType": "Field", 
+              "RHS": "Amount",
+              "ErrorMessage":"Custom error message for field"
+            },
+            {
+              "Id": "Condition002", 
+              "Operator": ">", 
+              "RHSType": "Value", 
+              "RHS": "10",
+              "ErrorMessage":"Custom error message for field"
+            }
+          ]
+        }, 
+        {
+          "Id": "Field005", 
+          "Name": "Destination", 
+          "Label": "Destination", 
+          "Type":"Field",
+          "Widget": "Dropdown", 
+          "Index":5,
+          "Required": "true"
+        }, 
+        {
+          "Id": "Field006", 
+          "Name": "Purpose", 
+          "Type":"Field",
+          "Label": "Purpose", 
+          "Widget": "Multiline", 
+          "Index":6,
+          "MaxCharacters": 500
+        }, 
+        {
+          "Id": "Field007", 
+          "Name": "Total_Days", 
+          "Type":"Field",
+          "Label": "Total Days", 
+          "Widget": "NumberFormula", 
+          "Index":7,
+          "Formula": "Travel_End_Date - Travel_Start_Date", 
+          "Decimal Places": 2
+        }
+      ]
+    },
+    {
+      "Id": "Section002", 
+      "Name": "Travel Section", 
+      "Type": "Section", 
+      "Index":3,
+      "Hints": "Process Employee expense reimbursements.", 
+      "Fields": [
+      ]
+    },
+    {
+      "Id": "Shbbfcbc91_6bcc_11e3_9b94_001e101f8924", 
+      "Type": "Table", 
+      "Name": "Travel table",
+      "Hints": "Process Employee expense reimbursements.", 
+      "Index":2,
+      "Form": [
+        {
+          "Id": "Section002", 
+          "Name": "Travel Section", 
+          "Type": "Section", 
+          "Index":"1",
+          "Hints": "Process Employee expense reimbursements.", 
+          "Fields": [
+            {
+              "Id": "Field011", 
+              "Type": "Field",
+              "Name": "Date", 
+              "Label": "Date", 
+              "Widget": "Date",
+              "Index":1
+            }, 
+            {
+              "Id": "Field012", 
+              "Type": "Field",
+              "Name": "Expense_Type", 
+              "Label": "Expense Type", 
+              "Widget": "Singleline",
+              "Index":2
+            }, 
+            {
+              "Id": "Field013",
+              "Type": "Field", 
+              "Name": "Amount", 
+              "Label": "Amount", 
+              "Widget": "Currency", 
+              "DecimalPlaces": 2, 
+              "Index":3,
+              "Validation": [
+                {
+                  "Id": "Condition011", 
+                  "Operator": ">", 
+                  "RHSType": "Value", 
+                  "RHS": "2",
+                  "ErrorMessage":"Numeber Error Message"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ], 
+  "Steps": [
+      {
+        "Id": "Step001", 
+        "Name": "Manager Approval", 
+        "Type": "Approval", 
+        "AssignedFor": "User", 
+        "AssignedTo": "CreatedBy"
+      }, 
+      {
+        "Id": "Step002", 
+        "Type": "Parallel", 
+        "Branches": [
+          {
+            "Id": "Branch001", 
+            "Name": "First Approval", 
+            "Steps": [
+              {
+                "Id": "Step011", 
+                "Name": "HR Approval", 
+                "Type": "Approval", 
+                "AssignedFor": "User", 
+                "AssignedTo": "CreatedBy"
+              },
+              {
+                "Id": "Step011", 
+                "Name": "Onboarding Approval", 
+                "Type": "Approval", 
+                "AssignedFor": "User", 
+                "AssignedTo": "CreatedBy"
+              }
+            ]
+          }, 
+          {
+            "Id": "Branch002", 
+            "Name": "Second Approval", 
+            "Condition": "Amount > 10(need to write formula data structure)", 
+            "Steps": [
+              {
+                "Id": "Step021", 
+                "Name": "Manager Approval", 
+                "Type": "Approval", 
+                "AssignedFor": "User", 
+                "AssignedTo": "CreatedBy"
+              },
+              {
+                "Id": "Step002", 
+                "Type": "Parallel", 
+                "Branches": [
+                  {
+                    "Id": "Branch001", 
+                    "Name": "First approval", 
+                    "Steps": [
+                      {
+                        "Id": "Step011", 
+                        "Name": "HR Approval", 
+                        "Type": "Approval", 
+                        "AssignedFor": "User", 
+                        "AssignedTo": "CreatedBy"
+                      },
+                      {
+                        "Id": "Step011", 
+                        "Name": "Onboarding Approval", 
+                        "Type": "Approval", 
+                        "AssignedFor": "User", 
+                        "AssignedTo": "CreatedBy"
+                      }
+                    ]
+                  }, 
+                  {
+                    "Id": "Branch002", 
+                    "Name": "Second approval", 
+                    "Condition": "Amount > 10(need to write formula data structure)", 
+                    "Steps": [
+                      {
+                        "Id": "Step021", 
+                        "Name": "Manager Approval", 
+                        "Type": "Approval", 
+                        "AssignedFor": "User", 
+                        "AssignedTo": "CreatedBy"
+                      }
+                    ]
+                  },
+                  {
+                    "Id": "Branch003", 
+                    "Name": "Third approval", 
+                    "Condition": "Amount > 10(need to write formula data structure)", 
+                    "Steps": [
+                      {
+                        "Id": "Step021", 
+                        "Name": "Finance Approval", 
+                        "Type": "Approval", 
+                        "AssignedFor": "User", 
+                        "AssignedTo": "CreatedBy"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Id": "Branch003", 
+            "Name": "Third approval", 
+            "Condition": "Amount > 10(need to write formula data structure)", 
+            "Steps": [
+              {
+                "Id": "Step021", 
+                "Name": "Finance Approval", 
+                "Type": "Approval", 
+                "AssignedFor": "User", 
+                "AssignedTo": "CreatedBy"
+              }
+            ]
+          }
+        ]
+      }
+  ], 
+  "Permissions": {
+    "Default": [ 
+      {
+        "PermissionsId": "Perm002", 
+        "Type": "Conditional", 
+        "Id": "Field001", 
+        "Condition": [
+          {
+            "Id": "Condition011",
+            "LHS":"formData.getValue('Amount')",
+            "Operator": ">", 
+            "RHSType": "Value", 
+            "RHS": "3"
+          }
+        ]
+      },
+      {
+        "PermissionId":"Perm002",
+        "Id":"Shbbfcbc91_6bcc_11e3_9b94_001e101f8924",
+        "Condition":[
+          {
+            "Id":"Condition013",
+            "LHS":"item.getValue('Amount')",
+            "Operator":"!==",
+            "RHSType":"Value",
+            "RHS":"10"
+          }
+        ]
+      }
+    ], 
+    "Step001": [
+      {
+        "PermissionId": "Perm001", 
+        "Id": "Field001", 
+        "Disabled": "true",
+        "Visible": "false"
+      }
+    ], 
+    "Step002": [ ]
+  }
+}

@@ -1,0 +1,100 @@
+<table cellpadding="0" cellspacing="0" border="0">
+    <tr class="lines" ng-repeat-start="step in branch.getList('Steps', 'Index')">
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr class="lines x">
+                        <td class="line lleft"></td>
+                        <td class="line lright"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr class="nodes">
+        <td class="node">
+            <div class="node bnode" ng-if="step.getValue('Type') == 'Parallel'">
+                <div class="heading">
+                    {{ step.getValue('Index') }}
+                </div>
+            </div>
+            <div class="node" ng-if="step.getValue('Type') != 'Parallel'">
+                <div class="heading">
+                    {{ step.getValue('Index') }}. {{ step.getValue('Id') }}
+                </div>
+                <div>
+                    <a href="" ng-click="deleteStep(step)"><i class="fa fa-trash-o fa-fw"></i> Delete</a>
+                     <a href="" ng-init="mtoggle=false" ng-click="mtoggle = !mtoggle">
+                        <i class="fa fa-fw" ng-class="mtoggle?'fa-angle-double-up':'fa-angle-double-down'"></i>
+                        {{ mtoggle?'Less':'More' }}
+                    </a>
+                </div>
+
+                <div class="more bouncy-slide-down" ng-show="mtoggle">
+                    <div class="input-field col">
+                        <input id="assigned_to" type="text" ng-model="step.getterSetter('AssignedTo')" ng-model-options="{ getterSetter: true }">
+                        <label for="assigned_to" class="active">Assigned To</label>
+                    </div>
+                    <div class="input-field col">
+                        <input id="execute_when" type="text" ng-model="step.getterSetter('Condition')" ng-model-options="{ getterSetter: true }">
+                        <label for="execute_when" ng-class="step.getValue('Condition')?'active':''">Condition</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="sla" type="text"  ng-model="step.getterSetter('SLA')" ng-model-options="{ getterSetter: true }">
+                        <label for="sla" ng-class="step.getValue('SLA')?'active':''">SLA</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="cc" type="text"  ng-model="step.getterSetter('NotifyTo')" ng-model-options="{ getterSetter: true }">
+                        <label for="cc" ng-class="step.getValue('NotifyTo')?'active':''">Notify</label>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr class="lines">
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr class="lines x">
+                        <td class="line lleft"></td>
+                        <td class="line lright"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="" ng-click="addStep(step)"><i class="fa fa-plus-square-o fa-2x"></i></a>
+        </td>
+    </tr>
+    <tr class="lines" ng-if="step.getValue('Type')=='Parallel'">
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr class="lines x">
+                        <td class="line lleft"></td>
+                        <td class="line lright"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr class="nodes" ng-if="step.getValue('Type')=='Parallel'" ng-repeat-end>
+        <td class="node">
+            <ng-include src="'workflow/views/workflow.branch.html'"></ng-include>
+        </td>
+    </tr>
+    <tr class="lines">
+        <td>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr class="lines x">
+                        <td class="line lleft"></td>
+                        <td class="line lright"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>

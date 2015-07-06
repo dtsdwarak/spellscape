@@ -1,0 +1,39 @@
+<lazy-style href="permissions/css/permissions.prop.css"/>
+<div ng-controller="PermissionsController">
+    <div class="permissions container gap-top40">
+      <div class="card light-green lighten-5">
+    	<div class="row margin-bottom-null">
+          <div class="col m4 stepsNav">
+            <!--code to show fields from json-->
+                  <div class="row margin-bottom-null gap-left10">
+                      <div class="col m12 row margin-bottom-null step">
+                              <p class="black-text caption"><i class="mdi-image-navigate-next small"></i>Initiate Request</p>
+                      </div>
+                  </div>
+                  <div class="bottom-border"></div>
+                  <div class="row gap-left20 margin-bottom-null">
+                     <div ng-repeat="steps in formData.getValue('worflow').getList('Steps')">
+                       <flow-private-include url="permissions/views/permissions.step.html" steps='steps'></flow-private-include>
+                      </div>
+                  </div>
+                  <div class="row margin-bottom-null gap-left10">
+                      <div class="col m12 row margin-bottom-null step">
+                              <p class="black-text caption"><i class="mdi-image-navigate-next small"></i>Completed</p>
+                      </div>
+                  </div>
+                  <div class="bottom-border"></div>
+               <!--end of code to show fields from json-->
+          </div>
+          <div class="col  s12 m8 fieldsContainer space-top20">
+              <!--code to show fields from json-->
+                   <div ng-repeat="section in formData.getList('form')">
+                        <flow-include url="form/views/form.field.sections.html"></flow-include>
+                  </div>  
+               <!--end of code to show fields from json-->
+          </div>
+      </div>
+    	<div id="form-container">
+    	    <ng-include src="'form/views/form.properties.html'"></ng-include>
+    	</div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<lazy-style href="workflow/css/workflow.css" />
+
+<div class="row" ng-controller="WorkflowController">
+    <div class="col offset-l1 l10">
+    	<div class="workflow">
+            <table cellpadding="0" cellspacing="0" border="0" ng-if="rootBranch">
+                <tr>
+                    <td>
+                        <div class="circle btn-floating waves-effect waves-light white lighten-1">
+                            <i class="mdi-editor-border-color"></i>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ng-include src="'workflow/views/workflow.step.html'" ng-init="branch=rootBranch"></ng-include>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="circle btn-floating waves-effect waves-light white lighten-1">
+                            <i class="mdi-av-stop"></i>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

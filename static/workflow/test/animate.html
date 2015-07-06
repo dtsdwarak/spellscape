@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script data-require="angular.js@*" data-semver="1.2.14" src="http://code.angularjs.org/1.2.14/angular.js"></script>
+  <script data-require="angular-animate@*" data-semver="1.2.13" src="http://code.angularjs.org/1.2.13/angular-animate.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <style>
+  	.blue-div{
+	  width:100%;
+	  height:200px;
+	  background-color:blue;
+	}
+
+	.green-div{
+	  width:100%;
+	  height:200px;
+	  background-color:green;
+	}
+
+	.animate-show {
+	  -webkit-transition:all linear 1s;
+	  transition:all linear 1s;
+	  opacity:1;
+	}
+	 
+	.animate-show.ng-hide-add,
+	.animate-show.ng-hide-remove {
+	  display:block!important;
+	}
+	 
+	.animate-show.ng-hide {
+	  opacity:0;
+	}
+  </style>
+</head>
+
+<body ng-controller="test">
+  <p>
+    <button ng-click="show=!show">Toggle</button>
+  </p>
+  <div ng-show="show" class="blue-div animate-show">A</div>
+  <div ng-hide="show" class="green-div animate-show">B</div>
+  <script>
+    angular.element(document).ready(function() {
+
+      var app = angular.module("app", ['ngAnimate']);
+
+      app.controller("test", function($scope) {
+        $scope.show = false;
+      });
+
+      angular.bootstrap(document, ["app"]);
+
+    });
+  </script>
+</body>
+
+</html>

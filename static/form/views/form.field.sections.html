@@ -1,0 +1,54 @@
+<div class="row">
+    <div ng-if="section.getValue('Type')=='Section'">
+        <!--include the file which has the buttons delete and sort section-->
+        <div ng-include src="'form/views/form.sections.header.html'" class="slide-left row margin-bottom-null"></div>
+        <div class="col l12 gap-top20 field-container sortable padding-null" kf-sortable id="{{section.getValue('Id')}}" style="min-height:100px ">
+            <div ng-repeat="field in fields=(section.getList('Fields','Index'))" data-id="{{field.getValue('Id')}}" ng-class="{fieldExpanded:selectedParam.getValue('Id')==field.getValue('Id'),repeatItem:toBeDeleted==field.getValue('Id')}">
+                <flow-include url="form/views/form.field.list.html" ng-if="selectedParam!=field"></flow-include>
+                <div ng-include src="'form/views/form.field.properties.html'" class="scale-fade row" ng-if="selectedParam.getValue('Id')==field.getValue('Id')"></div>
+            </div>
+            <div class="offset-l3 l9 col helper pointer ui-sortable-handle">
+                <div class="add-field" ng-class="{'short':!showFieldTypes,'large':showFieldTypes}">
+                    <span class="gap-left10" ng-click="showFieldTypes=!showFieldTypes">+ Add new field here</span>
+                    <div class="row field-types margin-bottom-null gap-top10 bouncy-slide-down" ng-show="showFieldTypes==true">
+                        <!--code to draw all the field types in side bar when the selected param is null-->
+                        <div class="col field-type" ng-repeat="field in getFieldTypes()">
+                            <div class="icon icon-{{field.class}} inline"></div>
+                            <div class="type-text inline top">{{field.name}}</div>
+                        </div>
+                        <!--end of code to draw field types in side bar-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="section.getValue('Type')=='Table'" class="table-container">
+        <div class="col l12">
+            <!--include the file which has the buttons delete and sort section-->
+            <div ng-include src="'form/views/form.sections.header.html'" class="slide-left row margin-bottom-null"></div>
+            <!--include the file which has the buttons delete and sort section-->
+            <div class="table-section-container" ng-repeat="tableSection in section.getList('Form')">
+                <div class='tableContainer'>
+                    <div class="col l12 gap-top20 gap-left20 sortable" kf-sortable type='horizontal' id="{{tableSection.getValue('Id')}}">
+                        <div ng-repeat="field in fields=(tableSection.getList('Fields','Index'))" class="inline field-add field-remove" ng-if="tableSection.getList('Fields').length>0">
+                            <flow-include url="form/views/form.field.table.list.html" ng-if="selectedParam!=field"></flow-include>
+                            <flow-include url="form/views/form.field.properties.html" class="table-field-props" ng-if="selectedParam.getValue('Id')==field.getValue('Id')"></flow-include>
+                        </div>
+                        <div class="inline" ng-if="tableSection.getList('Fields').length==0">
+                            <div class="table inline helper pointer">
+                                <div class="header">+ Add new field here</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--add 'Add section' and 'Add table' buttons in every section-->
+<div class="row margin-bottom-null">
+    <div class="col center l12 add-buttons">
+        <a class="waves-effect waves-light add-section" ng-click="addSection(section,sections[$index + 1])">Add Section</a>
+        <a class="waves-effect waves-light add-table" ng-click="addSection(section,sections[$index + 1],true)">Add Table</a>
+    </div>
+</div>

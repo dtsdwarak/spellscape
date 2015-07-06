@@ -1,0 +1,144 @@
+<!--code to add a new field in form design-->
+<div class="card-content col l11">
+    <form name="propertiesForm" novalidate>
+        <div class="row margin-bottom-null">
+            <div class="col l4 space-top10">
+                <label>Label</label>
+                <div class="input-field margin-top-null">
+                    <input id="field_name" type="text" class="validate" ng-model="selectedParam.getterSetter('Label')" ng-change="updateFieldLabel()" ng-model-options="{getterSetter: true}">
+                </div>
+            </div>
+            <div class="col offset-l1 l4 space-top10">
+                <label>Field type</label>
+                <select class="browser-default field-type gap-top10" ng-model="selectedParam.getterSetter('Widget')" ng-options="field.class as field.name for field in getFieldTypes()" ng-model-options="{ getterSetter: true }">
+                </select>
+            </div>
+            <div class="col offset-l1 l2 switch space-top10">
+                <label class="h6">
+                    Required
+                    <input type="checkbox" ng-model="selectedParam.getterSetter('Required')" ng-model-options="{ getterSetter: true }" ng-true-value="'true'" ng-false-value="'false'">
+                    <span class="lever gap-top20"></span>
+                </label>
+            </div>
+        </div>
+        <div class="advanced bouncy-slide-down" ng-show="advancedProps">
+            <div class="row">
+                <div class="col l4" ng-if="selectedParam.getValue('Widget')!='Lookup' && selectedParam.getValue('Widget')!='Masters' && selectedParam.getValue('Widget')!='YesNo' && selectedParam.getValue('Widget')!='Attachment'">
+                    <div class="switch">
+                        <label class="h6">
+                            Is formula?
+                            <input type="checkbox" ng-model-options="{ getterSetter: true }" ng-click="setFieldAsFormula(this,$event)" ng-checked="isFormula">
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l12">
+                    <textarea class="materialize-textarea formula" placeholder="Please enter the formula here" formula id="formula" ng-model="selectedParam.getterSetter('Formula')" ng-model-options="{ getterSetter: true }" ng-keyup="cancel($event)" ng-show="isFormula"></textarea>
+                    <div class='tokens'></div>
+                </div>
+            </div>
+            <!--section for lookup and masters-->
+            <div class="row" ng-if="selectedParam.getValue('Widget')=='Lookup'">
+                <div class="col l3">
+                    <label>Lookup values from</label>
+                    <select class="browser-default gap-top20" ng-model="selectedParam.getterSetter('LookupProcess')" ng-options="process.Id as process.Name for process in processList" ng-model-options="{ getterSetter: true }" ng-change="getFields(selectedParam.getVaue('LookupProcess'))">
+                    </select>
+                </div>
+                <div class="col l3 offset-l1">
+                    <label>Lookup field</label>
+                    <select class="browser-default gap-top20" ng-model="selectedParam.getterSetter('LookupField')" ng-options="field.Name for field in selectedFieldList track by field.Id" ng-model-options="{ getterSetter: true }">
+                    </select>
+                </div>
+            </div>
+            <!--end of section for lookup and masters-->
+            <div class="row">
+                <div class="col l3">
+                    <label>Field Name</label>
+                    <div class="input-field">
+                        <input id="fieldName" name="fieldName" ng-pattern="/^[a-zA-Z_][a-zA-Z0-9_]*$/" required type="text" ng-model="selectedParam.getterSetter('Name')" ng-model-options="{ getterSetter: true }" ng-change="isDuplicate()">
+                        <span class="field-name-info no-show">Duplicate field name. Adding underscore(_).</span>
+                    </div>
+                </div>
+                <div class="col l3 offset-l1" ng-if="selectedParam.getValue('Widget')=='Text'|| selectedParam.getValue('Widget')=='TextArea' || selectedParam.getValue('Widget')=='Number' || selectedParam.getValue('Widget')=='Currency' || selectedParam.getValue('Widget')=='Date' || selectedParam.getValue('Widget')=='Datetime'">
+                    <label>Default Value</label>
+                    <div class="input-field">
+                        <input id="fieldName" type="text" ng-model="selectedParam.getterSetter('Default')" ng-model-options="{ getterSetter: true }" ng-pattern="checkDefaultValue">
+                    </div>
+                </div>
+                <div class="col l3 offset-l1">
+                    <label>Display Hint</label>
+                    <div class="input-field">
+                        <input id="fieldName" type="text" ng-model="selectedParam.getterSetter('Hint')" ng-model-options="{ getterSetter: true }">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l4" ng-if="selectedParam.getValue('Widget')=='Text'|| selectedParam.getValue('Widget')=='TextArea' || selectedParam.getValue('Widget')=='Number' || selectedParam.getValue('Widget')=='Currency'">
+                    <label>Max Characters</label>
+                    <p class="range-field">
+                        <input type="range" min="0" max="255" ng-model="selectedParam.getterSetter('MaxCharacters')" ng-model-options="{ getterSetter: true }" />
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l12">
+                    <a href="javascript:void(0)" ng-click="addValidation()" ng-show="getValidation().length>0">Add Validation</a>
+                </div>
+            </div>
+            <div class="row gap-left16 margin-bottom-null" ng-repeat="validation in selectedParam.getList('Validations')">
+                <select class="validation-input col l3 browser-default" ng-model="validation.getterSetter('Operator')" ng-options="opType for opType in getValidation()" ng-model-options="{ getterSetter: true }">
+                </select>
+                <select class="validation-input col l2 browser-default" ng-model="validation.getterSetter('RHSType')" ng-options="opType for opType in ['Value','Field']" ng-model-options="{ getterSetter: true }" ng-change="updateRHSValue(validation)" ng-show="['Greater than','Less than','Greater than or Equal to','Less than or Equal to','Equal to'].indexOf(validation.getValue('Operator'))>=0">
+                </select>
+                <input type="text" class="validation-input col l3" ng-model="validation.getterSetter('RHS')" ng-model-options="{ getterSetter: true }" ng-show="validation.getValue('RHSType')=='Value'" />
+                <select class="validation-input col l3 browser-default" ng-model="validation.getterSetter('RHS')" ng-options="field.getValue('Label') for field in getFieldList() track by field.getValue('Id')" ng-model-options="{ getterSetter: true }" ng-show="validation.getValue('RHSType')=='Field'">
+                </select>
+                <!--show only date fields for data validation-->
+                <select class="validation-input col l3 browser-default" ng-model="validation.getterSetter('RHS')" ng-options="field.getValue('Label') for field in getFieldList() | dateOnly" ng-model-options="{ getterSetter: true }" ng-show="['After the date','Before the date'].indexOf(validation.getValue('Operator'))>=0">
+                </select>
+                <!--end of date field validation-->
+                <a class="col l2" href="javascript:void(0)" ng-click="deleteValidation(validation.getValue('Id'))">Delete</a>
+            </div>
+            <div class="row gap-left16 margin-bottom-null" ng-class="{errorValidationMessage: isInvalid(selectedParam)}" ng-show="selectedParam.getList('Validations').length>0">
+                <label>Validation Message</label>
+                <div class="input-field margin-bottom-null l10">
+                    <input id="field_name" type="text" ng-class="{invalid:isInvalid('ErrorMessage')}" class="validate" ng-model="selectedParam.getterSetter('ErroMessage')" ng-model-options="{getterSetter: true}">
+                </div>
+            </div>
+            <!--adding criteria for lookup and masters-->
+            <div class="row" ng-if="selectedParam.getValue('Widget')=='Lookup' || selectedParam.getValue('Widget')=='Master'">
+                <div class="col l12">
+                    <a href="javascript:void(0)" ng-click="addCriteria()">Add Filter</a>
+                </div>
+            </div>
+            <div class="row" ng-repeat="criteria in selectedParam.getList('Criteria')">
+                <select class="validation-input col l3 browser-default" ng-model="criteria.getterSetter('LHS')" ng-options="field.Name for field in selectedFieldList track by field.Id" ng-model-options="{ getterSetter: true }">
+                </select>
+                <select class="validation-input col l3 browser-default" ng-model="criteria.getterSetter('Operator')" ng-options="opType for opType in ['Greater than','Less than','Greater than or Equal to','Less than or Equal to','Equal to']" ng-model-options="{ getterSetter: true }">
+                </select>
+                <select class="validation-input col l2 browser-default" ng-model="criteria.getterSetter('RHSType')" ng-options="opType for opType in ['None','Value','Field','Formula']" ng-model-options="{ getterSetter: true }" ng-change="updateRHSValue(criteria)">
+                </select>
+                <input type="text" class="col l3" ng-model="criteria.getterSetter('RHS')" ng-model-options="{ getterSetter: true }" ng-show="criteria.getValue('RHSType')=='Value' || criteria.getValue('RHSType')=='Formula'" />
+                <select class="validation-input col l3 browser-default" ng-model="criteria.getterSetter('RHS')" ng-options="field.getValue('Label') for field in getFieldList()" ng-model-options="{ getterSetter: true }" ng-show="criteria.getValue('RHSType')=='Field'">
+                </select>
+                <a class="col l2" href="javascript:void(0)" ng-click="deleteCriteria(criteria.getValue('Id'))">Delete</a>
+            </div>
+        </div>
+        <!--end of criteria-->
+</div>
+<div class="col l1 side-buttons">
+    <div class="row">
+        <a class="btn-floating waves-effect waves-light hint--right" id="close" ng-click="setSelectedParam()" data-hint="Close"><i class="fa fa-times"></i></a>
+    </div>
+    <div class="row">
+        <a class="btn-floating waves-effect waves-light hint--right" id="save" data-hint="Save"><i class="fa fa-floppy-o"></i></a>
+    </div>
+    <div class="row">
+        <a class="btn-floating waves-effect waves-light hint--right" id="advanced" ng-click="toggleAdvancedProps()" data-hint="Show advanced">
+            <i class="fa fa-chevron-down" ng-show="!advancedProps"></i>
+            <i class="fa fa-chevron-up" ng-show="advancedProps"></i>
+        </a>
+    </div>
+</div>

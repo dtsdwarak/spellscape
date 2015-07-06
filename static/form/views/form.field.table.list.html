@@ -1,0 +1,5 @@
+<div class="table inline field pointer" ng-click="setSelectedParam(field,section)" style="width: {{field.getValue('ColumnWidth')}}">
+    <div class="header">{{field.getValue('Label')}}</div>
+    <div class="content">
+        <flow-include url="form/views/form.field.list.widget.html" ng-if="selectedParam!=field"></flow-include>
+</div>

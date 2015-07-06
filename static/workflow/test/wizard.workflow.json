@@ -1,0 +1,156 @@
+{
+	"Steps": 
+	[
+	  {
+	    "Id": "Step002",
+	    "Index": 2,
+	    "Name": "Manager Approval", 
+	    "Type": "Approval", 
+	    "AssignedFor": "User", 
+	    "AssignedTo": "CreatedBy",
+	    "SLA": 48,
+	    "Condition": "Amount > 10",
+	    "NotifyTo": "vivek@orangescape.com,abc@orangescape.com"
+	  },
+	  {
+	    "Id": "Step003",
+	    "Index": 3, 
+	    "Name": "Manager Approval", 
+	    "Type": "Approval", 
+	    "AssignedFor": "User", 
+	    "AssignedTo": "CreatedBy"
+	  },
+	  {
+	    "Id": "Step004", 
+	    "Index": 4,
+	    "Type": "Parallel",
+	    "Branches": [
+	      {
+	        "Id": "Branch001",
+	        "Index": 1,
+	        "Name": "First Approval", 
+	        "Steps": [
+	          {
+	            "Id": "Step011", 
+	            "Index": 1,
+	            "Name": "HR Approval", 
+	            "Type": "Approval", 
+	            "AssignedFor": "User", 
+	            "AssignedTo": "CreatedBy"
+	          },
+	          {
+	            "Id": "Step012", 
+	            "Index": 2,
+	            "Name": "Onboarding Approval", 
+	            "Type": "Approval", 
+	            "AssignedFor": "User", 
+	            "AssignedTo": "CreatedBy"
+	          }
+	        ]
+	      }, 
+	      {
+	        "Id": "Branch002",
+	        "Index": 2,
+	        "Name": "Second Approval", 
+	        "Condition": "Amount > 10(need to write formula data structure)", 
+	        "Steps": [
+	          {
+	            "Id": "Step021",
+	            "Index": 1,
+	            "Name": "Manager Approval", 
+	            "Type": "Approval", 
+	            "AssignedFor": "User", 
+	            "AssignedTo": "CreatedBy"
+	          },
+	          {
+	            "Id": "Step022", 
+	            "Index": 2,
+	            "Type": "Parallel", 
+	            "Branches": [
+	              {
+	                "Id": "Branch021",
+	                "Index": 1,
+	                "Name": "First approval", 
+	                "Steps": [
+	                  {
+	                    "Id": "Step211", 
+	                    "Index": 1,
+	                    "Name": "HR Approval", 
+	                    "Type": "Approval", 
+	                    "AssignedFor": "User", 
+	                    "AssignedTo": "CreatedBy"
+	                  },
+	                  {
+	                    "Id": "Step212",
+	                    "Index": 2, 
+	                    "Name": "Onboarding Approval", 
+	                    "Type": "Approval", 
+	                    "AssignedFor": "User", 
+	                    "AssignedTo": "CreatedBy"
+	                  }
+	                ]
+	              }, 
+	              {
+	                "Id": "Branch022",
+	                "Index": 2, 
+	                "Name": "Second approval", 
+	                "Condition": "Amount > 10(need to write formula data structure)", 
+	                "Steps": [
+	                  {
+	                    "Id": "Step221",
+	                    "Index": 1,
+	                    "Name": "Manager Approval", 
+	                    "Type": "Approval", 
+	                    "AssignedFor": "User", 
+	                    "AssignedTo": "CreatedBy"
+	                  }
+	                ]
+	              },
+	              {
+	                "Id": "Branch023",
+	                "Index": 3, 
+	                "Name": "Third approval", 
+	                "Condition": "Amount > 10(need to write formula data structure)", 
+	                "Steps": [
+	                  {
+	                    "Id": "Step231",
+	                    "Index": 1,
+	                    "Name": "Finance Approval", 
+	                    "Type": "Approval", 
+	                    "AssignedFor": "User", 
+	                    "AssignedTo": "CreatedBy"
+	                  }
+	                ]
+	              }
+	            ]
+	          }
+	        ]
+	      },
+	      {
+	        "Id": "Branch003",
+	        "Index": 3, 
+	        "Name": "Third approval", 
+	        "Condition": "Amount > 10(need to write formula data structure)", 
+	        "Steps": [
+	          {
+	            "Id": "Step031",
+	            "Index": 1,
+	            "Name": "Finance Approval", 
+	            "Type": "Approval", 
+	            "AssignedFor": "User", 
+	            "AssignedTo": "CreatedBy"
+	          }
+	        ]
+	      }
+	    ]
+	  },
+	  {
+	    "Id": "Step005",
+	    "Index": 5, 
+	    "Name": "Test Approval", 
+	    "Type": "Approval", 
+	    "AssignedFor": "User", 
+	    "AssignedTo": "CreatedBy"
+	  }
+	]
+}

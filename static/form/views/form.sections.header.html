@@ -1,0 +1,17 @@
+<div class="col l9 gap-left20 gap-top10">
+    <input id="sectionheading" class="title" onclick="this.focus();this.select()" type="text" ng-model="section.getterSetter('Name')" ng-model-options="{getterSetter: true}">
+</div>
+<div class="col l2 right row section-actions inline margin-bottom-null padding-right-null">
+    <div class="col l6 padding-null center" ng-click="moveSectionDown(section,sections[$index+1])" ng-if="$index<sections.length-1">
+        <a href="javascript:void(0)" class="hint--bottom hint--bounce" data-hint="Move down"><i class="fa fa-chevron-down"></i></a>
+    </div>
+    <div class="col l6 padding-null center" ng-click="moveSectionUp(section,sections[$index-1])" ng-if="$index>=1">
+        <a href="javascript:void(0)" class="hint--bottom hint--bounce" data-hint="Move up"><i class="fa fa-chevron-up"></i></a>
+    </div>
+    <div class="col l6 padding-null center" ng-click="showDeleteConfirmation(field, $event)">
+        <a href="javascript:void(0)" class="hint--bottom hint--bounce" data-hint="Delete"><i class="fa fa-trash-o"></i></a>
+    </div>
+</div>
+<div class="col l12 gap-left20">
+    <input id="sectionheading" onclick="this.focus();this.select()" class="hint-text" type="text" ng-model="section.getterSetter('Hints')" ng-model-options="{getterSetter: true}">
+</div>

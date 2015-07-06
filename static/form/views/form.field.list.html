@@ -1,0 +1,25 @@
+<div class="row deleteField lime lighten-4 white-text bouncy-slide-right" ng-show="toBeDeleted==field.getValue('Id')">
+    <div class="col offset-l2 l5 black-text">Do you want to delete this field?</div>
+    <div class="col l2">
+        <input type="button" class="btn red" value="Yes" ng-click="deleteField(field,section)">
+    </div>
+    <div class="col l2">
+        <input type="button" class="btn white black-text" value="No" ng-click="showDeleteConfirmation(null, $event)">
+    </div>
+</div>
+<div class="row field pointer" ng-show="toBeDeleted!=field.getValue('Id')" ng-click="setSelectedParam(field)">
+    <div class="col l6 offset-l3">
+        <div class="input-field">
+            <flow-include url="form/views/form.field.list.widget.html" ng-if="selectedParam!=field"></flow-include>
+            <label class="small_field_label active" for="{{ field.getValue('Id')}}_lbl">{{ field.getValue("Label")}}</label>
+        </div>
+    </div>
+    <div class="col l3 row field-actions">
+        <div class="col l6 padding-null" ng-click="copyField(field)">
+            <a href="javascript:void(0)"><i class="fa fa-files-o"></i><span class="font-size10 block">Duplicate</span></a>
+        </div>
+        <div class="col l6 padding-null" ng-click="showDeleteConfirmation(field, $event)">
+            <a href="javascript:void(0)"><i class="fa fa-trash-o"></i><span class="font-size10 block">Delete</span></a>
+        </div>
+    </div>
+</div>

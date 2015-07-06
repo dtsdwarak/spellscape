@@ -1,0 +1,691 @@
+nav {
+    background: #00af43;
+    height: 54px;
+}
+
+nav ul li {
+    height: 50px;
+    line-height: 50px;
+}
+
+.form {
+    background: rgba(240, 240, 240, 0.4);
+}
+
+.form .form-container {
+    -moz-box-shadow: inset 0 2px 5px -1px rgba(189, 168, 189, 1);
+    -webkit-box-shadow: inset 0 2px 5px -1px rgba(189, 168, 189, 1);
+    background: #f7f5f2;
+    box-shadow: inset 0 2px 5px -1px rgba(189, 168, 189, 1);
+    padding: 0px 10px 20px 9px;
+}
+
+.form .form-container .shortDesc-container {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 48px;
+}
+
+.form .form-container .section-container {
+    border: 1px solid transparent;
+}
+
+.form .form-container .section-container:hover {
+    background: #fefefe;
+}
+
+.form .form-container .section-container .add-field {
+    padding: 15px 0px 15px 8px;
+    font-size: 12px;
+    box-shadow: 0px 1px 1px 1px #ddd;
+}
+
+.form .form-container .section-container .add-field.short {
+    width: 140px;
+}
+
+.form .form-container .section-container .add-field.large {
+    width: 100%;
+}
+
+.form .form-container .section-container .add-field .field-types {
+    height: 100px;
+}
+
+.form .form-container .section-container .field-type {
+    padding: 6px 0px 5px 10px;
+    width: 110px;
+    margin-right: 4px;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.form .form-container .section-container .section-actions {
+    width: auto;
+}
+
+.form .form-container .section-container .section-actions > div {
+    display: none;
+}
+
+.form .form-container .section-container:hover .section-actions > div {
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    width: 30px;
+}
+
+.form .form-container .section-container:hover .section-actions > div i {
+    color: #bdbdbd;
+}
+
+.form .form-container .section-container:hover .section-actions > div i:hover {
+    color: #444;
+}
+
+.form .form-container .title {
+    border-bottom: 0px;
+    font-size: 15px;
+    color: #444;
+    width: 60%;
+    height: 30px;
+    border: 1px solid #fff;
+    margin-bottom: 0px;
+}
+
+.form .form-container .hint-text {
+    border-bottom: 0px;
+    font-size: 11px;
+    color: #999;
+    width: 60%;
+    height: 20px;
+    border: 1px solid #fff;
+    margin-bottom: 0px;
+}
+
+.form .form-container .hint-text:hover,
+.form .form-container .title:hover {
+    background: #eee;
+    border-bottom: 1px dashed red;
+}
+
+.form .form-container .hint-text:focus,
+.form .form-container .title:focus {
+    background: #fff;
+    border-bottom: 1px dashed red;
+}
+
+.form .form-container .shortDesc-container .shortDesc {
+    padding-top: 0px;
+    color: #999;
+    border-bottom: 0px;
+}
+
+.form .form-container .shortDesc-container label {
+    font-weight: 500;
+}
+
+.form .form-container label {
+    color: #444;
+}
+
+.form .form-container .fields {
+    background: #f6f5f1 !important;
+    margin-bottom: 0;
+    margin-top: 8px;
+    padding-left: 0px;
+}
+
+.ui-draggable-handle {
+    z-index: 10000;
+}
+
+.form .form-container .fields .attachment {
+    font-size: 12px;
+    height: 32px;
+    margin-top: 20px;
+    padding: 0;
+    text-transform: none;
+    width: 120px;
+}
+
+.form .form-container .add-buttons {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px dotted #ddd;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+
+.form .form-container .add-buttons .add-section,
+.form .form-container .add-buttons .add-table {
+    background-color: white;
+    font-size: 11px;
+    display: inline;
+    padding: 0 10px 0 10px;
+    text-transform: uppercase;
+}
+
+.form .form-container .field_props {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 3px 2px #f5f5f5;
+    padding: 10px;
+}
+
+.form .form-container .fieldExpanded {
+    background: #f6f5f1;
+    box-shadow: inset -5px 0px 4px -5px #ddd, inset -16px 0px 6px 0px #ddd;
+    margin-bottom: 10px;
+    margin-top: 6px;
+    padding: 2px;
+}
+
+.form .form-container .fieldExpanded >div {
+    width: 113%;
+    background: #f6f5f1;
+    margin-bottom: 0px;
+    left: -12px;
+    position: relative;
+}
+
+.form .form-container .fieldExpanded .side-buttons {
+    margin-top: 20px;
+}
+
+.form .form-container .fieldExpanded .side-buttons .row {
+    margin-bottom: 6px;
+}
+
+.form .form-container .fieldExpanded .side-buttons .row a {
+    background: #c0b9af;
+    height: 24px;
+    overflow: visible;
+    transition: all .2s ease-in-out;
+    width: 24px;
+    box-shadow: none;
+}
+
+.form .form-container .fieldExpanded .side-buttons .row a:hover {
+    transform: scale(1.1);
+}
+
+.form .form-container .fieldExpanded .side-buttons .row a i {
+    font-size: 16px;
+    margin-top: -6px;
+    position: absolute;
+}
+
+.form .form-container .fieldExpanded .card-content {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    background: #fff;
+    margin: 16px 0;
+}
+
+.form .form-container .fieldExpanded .card-content select.field-type {
+    height: 40px;
+    border: 0px;
+}
+
+.form .form-container .fieldExpanded .advanced {
+    padding-top: 10px;
+    border-top: 1px dotted #eee;
+    margin-top: 6px;
+}
+
+.form .form-container .fieldExpanded .advanced select {
+    height: 32px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+/**override materializecss styles**/
+
+.form .form-container .select-wrapper .select-dropdown {
+    font-size: 11px;
+    height: 36px;
+    margin-bottom: 0;
+}
+
+.form .form-container .fieldExpanded .advanced .input-field input {
+    height: 20px;
+}
+
+.form .form-container .field-name-info {
+    color: #64b5f6;
+    font-size: 11px;
+    position: absolute;
+    width: 220px;
+}
+
+.form .form-container .add-btn {
+    height: 34px;
+    padding: 6px;
+    line-height: 24px;
+    background-color: #faf9f7;
+}
+
+.form .form_title {
+    height: 42px;
+}
+
+.form .form_title > input {
+    margin-top: 7px;
+    text-transform: uppercase;
+    border: 0 !important;
+}
+
+.form .advanceProps {
+    margin-top: 110px;
+    border: 1px solid #ddd;
+    margin-bottom: -37px;
+}
+
+.form .resizeMaterialInput {
+    margin-bottom: 0;
+    height: 36px;
+}
+
+.form .small_field_label {
+    font-size: 12px;
+    margin-left: -12px;
+}
+
+.form .field.row:hover {
+    background-color: #f7fbd6;
+}
+
+.form .sidebar {
+    height: auto;
+    padding-left: 0;
+    position: absolute;
+    right: 0;
+}
+
+.form .table-drop-hover {
+    background-color: #f5f5f5;
+    height: 80px;
+    padding: 10px;
+    color: #444;
+}
+
+.form .sidebar .icon {
+    font-size: 18px !important;
+    color: #000;
+    float: left;
+    height: 40px;
+    line-height: 30px;
+    border-radius: 5px 0px 0px 5px;
+    padding: 8px 8px 8px 10px;
+    border-right: 1px solid #eee;
+    background-color: #faf9f7;
+}
+
+.form .sidebar .input-field {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 2rem;
+}
+
+.form .form-container .field-container .input-field .switch label {
+    left: 0;
+}
+
+.form .form-container .field-container .deleteField {
+    padding-top: 20px;
+    margin-bottom: 0px;
+}
+
+.form .form-container .field-container .deleteField >div {
+    height: 52px;
+}
+
+.form .form-container .field-container .field .field-actions div {
+    height: 70px;
+    text-align: center;
+    width: 45px;
+    position: relative;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+
+.form .form-container .field-container .field .field-actions div:hover {
+    background: #f1f7b6;
+}
+
+.form .form-container .field-container .field .field-actions div a {
+    top: 24px;
+    position: relative;
+}
+
+.form .form-container .field-container .field .field-actions div a i {
+    top: -10px;
+    position: relative;
+}
+
+.form .form-container .field-container .field .field-actions {
+    position: relative;
+    opacity: 0;
+    margin-bottom: 0px;
+    width: 90px;
+    height: 70px;
+    float: right;
+    left: 13px;
+    padding: 0;
+    -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* easeOutQuad */
+    
+    -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.form .form-container .field-container .field:hover .field-actions {
+    color: #444;
+    opacity: 1;
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 0px;
+    transform: translateX(-12px);
+    -ms-transform: translateX(-12px);
+    -webkit-transform: translateX(-12px);
+    transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+}
+
+.form .form-container .field-container .field:hover .field-actions a {
+    color: #444;
+    font-size: 16px;
+}
+
+.form .form-container .field-container .field .field-actions {
+    overflow: hidden;
+    max-height: 52px;
+}
+
+.form .form-container .field-container .field .field-actions a span {
+    opacity: 0;
+}
+
+.form .form-container .field-container .field .field-actions >div:hover {
+    -webkit-transform: translate(0, -10px);
+    -moz-transform: translate(0, -10px);
+    -o-transform: translate(0, -10px);
+    -ms-transform: translate(0, -10px);
+    transform: translate(0, -10px);
+    position: relative;
+}
+
+.form .form-container .field-container .field .field-actions >div:hover a span {
+    position: relative;
+    color: #000;
+    opacity: 1;
+}
+
+.form .form-container .field-container .input-field .switch span {
+    margin-left: 4px;
+}
+
+.form .form-container .tokens {
+    font-size: 11px;
+    background-color: #f5f5f5;
+    margin-top: -6px;
+    position: absolute;
+    width: 260px;
+    z-index: 1;
+}
+
+.form .sidebar .intellisense li {
+    padding: 10px;
+}
+
+.form .field-container .field_props .row {
+    margin-bottom: 10px;
+}
+
+.form .field-container .field_props .validation-input {
+    height: 34px;
+    width: 180px;
+}
+
+.form .field-container .invalid::after {
+    content: " This field cannot be empty";
+    font-size: 11px;
+    color: red;
+}
+
+.form .field-container .table-field-props {
+    position: absolute;
+}
+
+.form .sidebar .field-type {
+    text-align: left;
+    padding: 0;
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, .12), 0 1px 1px 0 rgba(0, 0, 0, .24);
+}
+
+.form .sidebar .field-type:hover {
+    -webkit-transform: translate3d(0, -2px, 0);
+    -moz-transform: translate3d(0, -2px, 0);
+    -ms-transform: translate3d(0, -2px, 0);
+    -o-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 40px 16px -20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    -webkit-transition: 0.3s all cubic-bezier(0.48, 0.04, 0.21, 0.94);
+    -moz-transition: 0.3s all cubic-bezier(0.48, 0.04, 0.21, 0.94);
+    transition: 0.3s all cubic-bezier(0.48, 0.04, 0.21, 0.94);
+}
+
+.form .sidebar .field-type.section {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    height: 31px;
+    background: #00BCD4;
+}
+
+.form .type-image {
+    background-image: url(../img/fields.png);
+    width: 28px;
+    height: 30px;
+    text-align: left;
+    float: left;
+    color: white;
+    background-color: #009688;
+}
+
+@media only screen and (min-width: 1370px) {
+    .form .sidebar .field-type .type-text,
+    .form .sidebar .field-type.section .type-text {
+        font-size: 13px;
+        line-height: 40px;
+        color: #444;
+        padding-left: 12px;
+    }
+}
+
+@media only screen and (max-width: 1370px) {
+    .form .sidebar .field-type .type-text,
+    .form .sidebar .field-type.section .type-text {
+        font-size: 11px;
+        line-height: 40px;
+        color: #444;
+        padding-left: 8px;
+    }
+}
+
+.form .type-image.singleline {
+    background-position: -4px -1px;
+}
+
+.form .type-image.multiline {
+    background-position: -33px -1px;
+}
+
+.form .type-image.number {
+    background-position: -4px -27px;
+}
+
+.form .type-image.dropdown {
+    background-position: -33px -78px;
+    margin-left: 2px;
+}
+
+.form .type-image.datetime {
+    background-position: -33px -78px;
+    margin-left: 2px;
+}
+
+.form .drop-highlight {
+    border: 1px solid #efefef;
+    height: 40px;
+    width: 100%;
+    background: #efefef;
+}
+
+.form .drop-horizontal {
+    border: 1px solid #efefef;
+    height: 92px;
+    position: absolute;
+    width: 10px;
+    display: inline-block;
+    background: #efefef;
+}
+
+.form .drop-first-horizontal {
+    width: 100%;
+    background: #f5f5f5;
+    height: 120px;
+}
+
+.form .table-container {}
+
+.form .table-container .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.12), 0 0 0 0 rgba(0, 0, 0, 1.12);
+}
+
+.form .table .header {
+    font-size: 12px;
+    font-weight: normal;
+    font-family: "Roboto";
+    text-align: left;
+    color: #757575;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 14px;
+    vertical-align: top;
+    border-top: 0;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+/**CSS For images from custom kissflow font**/
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../../shared/css/fonts/icomoon.eot?-hazqah');
+    src: url('../../shared/css/fonts/icomoon.eot?#iefix-hazqah') format('embedded-opentype'), url('../../shared/css/fonts/icomoon.woff?-hazqah') format('woff'), url('../../shared/css/fonts/icomoon.ttf?-hazqah') format('truetype'), url('../../shared/css/fonts/icomoon.svg?-hazqah#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Attachment:before {
+    content: "\e600";
+}
+
+.icon-Checkbox:before {
+    content: "\e601";
+}
+
+.icon-Currency:before {
+    content: "\e602";
+}
+
+.icon-Date:before {
+    content: "\e603";
+}
+
+.icon-Datetime:before {
+    content: "\e604";
+}
+
+.icon-Dropdown:before {
+    content: "\e605";
+}
+
+.icon-Users:before {
+    content: "\e606";
+}
+
+.icon-Lookup:before {
+    content: "\e607";
+}
+
+.icon-Masters:before {
+    content: "\e608";
+}
+
+.icon-Number:before {
+    content: "\e609";
+}
+
+.icon-Multiline:before {
+    content: "\e60a";
+}
+
+.icon-radio:before {
+    content: "\e60b";
+}
+
+.icon-Singleline:before {
+    content: "\e60c";
+}
+
+.icon-Yesno:before {
+    content: "\e60d";
+}
+/**End of css for images from custom kissflow font**/
+
+.form .table .content {
+    width: 100%;
+    padding: 10px 10px 0 10px;
+}
+
+.form .table input {
+    height: 16px;
+}
+
+.sticky {
+    height: 100%;
+}

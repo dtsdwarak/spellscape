@@ -1,0 +1,119 @@
+.workflow {
+    border: 1px solid #cccccc;
+    padding: 20px;
+    background: #f6f5f1;
+    box-shadow: inset 0 2px 5px -1px rgba(189, 168, 189, 1);
+    min-height: 600px;
+}
+
+.workflow .circle i {
+    color: #666;
+    font-size: 16px;
+}
+
+.workflow a {
+    color:#000;
+    text-decoration:none;
+}
+
+.workflow table {
+    width: 100%;
+    height:100%;
+    border-collapse: separate;//override materialize css from collapse
+}
+
+
+.workflow td {
+    text-align: center;
+    vertical-align: top;
+    padding: 0px 2px;
+    border-radius: 0px; //override materialize css from 2px
+}
+
+.workflow tr.extend {
+    height:100%;
+}
+
+.workflow tr.extend td.lleft {
+    border-right: 1px solid #666;
+}
+
+.workflow tr.extend td.lright {
+    border-left: 1px solid #666;
+}
+
+.workflow tr.lines td.line {
+    width: 1px;
+    height: 20px;
+}
+
+.workflow tr.lines td.ltop {
+    border-top: 2px solid #666;
+}
+
+.workflow tr.lines td.lbottom {
+    border-bottom: 2px solid #666;
+}
+
+.workflow tr.lines td.lleft {
+    border-right: 1px solid #666;
+}
+
+.workflow tr.lines td.lright {
+    border-left: 1px solid #666;
+}
+
+
+.workflow div.node {
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #eee;
+    display: inline-block;
+    padding: 0 4px;
+    width: 200px;
+    //height: 75px;
+    line-height: 35px;
+
+    box-shadow: 4px 4px 6px #888888;
+    -moz-box-shadow: 4px 4px 6px #888888;
+    -webkit-box-shadow: 4px 4px 6px #888888;
+
+    /*
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    */
+    
+}
+
+.workflow div.node .heading {
+    border-bottom: 1px solid #e0e0e0;
+}
+.workflow div.bnode {
+    width: 35px;
+    height: 35px;
+    /* Rotate div */
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    padding: 0px;
+}
+
+.workflow div.bnode div {
+    transform: rotate(-45deg);
+    height: 35px;
+    overflow: hidden;
+}
+
+.workflow div.hasChildren {
+    background-color: #eee;
+}
+
+.workflow div.hasChildren:hover {
+    background-color: #ccc;
+}
+
+.workflow div.node .more {
+    border-top: 1px solid #e0e0e0;
+    padding-top:20px;
+}

@@ -11,7 +11,6 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse){
 
 			// var translate_elements = document.querySelectorAll("[translate]");
 			var strings = $('[translate]');
-			console.log(strings);
 			if(strings.length){
 
 				//Load page content onto browser page for Modal
@@ -23,11 +22,6 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse){
 
 				//Pass message to Browser Page
 				window.postMessage({ type: "HIGHLIGHT_TRANSLATE", text: "Hello from the webpage!" }, "*");
-
-				//For Modal Popup Input field
-				$(".forTranslation").click(function(){
-					$("#input_text").val(this.text);
-				});
 
 				alert("Translate these strings please");
 			}

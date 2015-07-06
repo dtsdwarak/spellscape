@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html ng-app="flowApp">
+<head>
+    <title>KiSSFLOW Wizard</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" type="text/css" href="lib/bower_components/materialize/dist/css/materialize.min.css" media="screen,projection">
+    <link rel="stylesheet" type="text/css" href="shared/css/extra.css" media="screen,projection">
+    <link rel="stylesheet" type="text/css" href="shared/css/animate.css" media="screen,projection">
+    <link rel="stylesheet" type="text/css" href="shared/css/hint.css" media="screen,projection">
+    <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="shared/css/kissflow.css" media="screen,projection">
+</head>
+
+<body class="grey lighten-3" ng-controller="dataProcessControl">
+    <!-- <section ng-controller="data_process_control"> -->
+    <nav>
+        <div class="nav-wrapper">
+          <div class="col s12">
+            <a href="#!" class="brand-logo"><img src="https://kissflow.com/wp-content/uploads/2013/11/horizontal_logo_kissflow2.png" style="width:120px;margin-top: 6px;"/></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down font-weight500">
+                <li>
+                    <select ng-model="languages.current" ng-options="key as value for (key, value) in languages.available" id="langSelect"></select>
+                </li>
+                <li><a class="white-text font-size14" href="#inbox" translate>Home</a></li>
+                <li><a class="white-text font-size14" href="#workflow" translate>Processes</a></li>
+                <li><a class="white-text font-size14" href="#inbox" translate>Reports</a></li>
+                <li><a class="white-text font-size14" href="#inbox" translate>Admin</a></li>
+                <li><a class="white-text font-size14" href="#report" translate>Masters</a></li>
+                <li><a><i class="white-text font-size13 mdi-social-notifications" style="font-size: 18px"></i></a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div>
+        <div ng-view></div>
+    </div>
+    <script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="lib/bower_components/lodash/lodash.min.js"></script>
+    <script type="text/javascript" src="lib/bower_components/angular/angular.min.js"></script>
+
+    <script type="text/javascript" src="lib/bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="lib/bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="lib/bower_components/materialize/js/pushpin.js"></script>
+    
+    <script type="text/javascript" src="lib/bower_components/requirejs/require.js"></script>
+    
+    <script type="text/javascript" src="lib/bower_components/angular-animate/angular-animate.min.js"></script>
+
+    <script type="text/javascript" src="shared/js/angular.recursion.js"></script>
+    <script type="text/javascript" src="shared/js/functions.js"></script>
+    <script type="text/javascript" src="shared/js/functions.list.js"></script>
+    <script type="text/javascript" src="shared/js/accent_fold.js"></script>
+    <script type="text/javascript" src="shared/js/formula_parser.js"></script>
+    <script type="text/javascript" src="shared/js/directives.js"></script>
+    <script type="text/javascript" src="shared/js/filters.js"></script>
+    <script type="text/javascript" src="shared/js/app.js"></script>
+
+    <script type="text/javascript" src="shared/js/lazy-load.js"></script>
+    <script type="text/javascript" src="shared/js/service.js"></script>
+    <script type="text/javascript" src="shared/js/model.js"></script>
+
+    <!-- Angular Translation -->
+    <script type="text/JavaScript" src="shared/js/spellscape/angular-gettext.min.js"></script>
+    <script type="text/JavaScript" src="shared/js/spellscape/angular-spellscape.js"></script>
+    <script type="text/JavaScript" src="shared/js/spellscape/page-load.js"></script>
+    <!-- <script type="text/JavaScript" src="shared/js/spellscape/translations.js"></script> -->
+
+    <script type="text/JavaScript">
+        $(document).ready(function(){
+            window.addEventListener("message", function(event) {
+              if (event.source != window)
+                return;
+
+
+              if (event.data.type && (event.data.type == "HIGHLIGHT_TRANSLATE")) {
+                    var strings = $('[translate]');
+
+                    for(var i=0;i<strings.length;i++){
+                        $(strings[i]).html('<a href="#" data-target="#spellScapeModal" data-toggle="modal" class="forTranslation ng-scope">'+ $(strings[i]).text() +'</a>');
+                    }
+
+                    //For Modal Popup Input field
+                    $(".forTranslation").click(function(){
+                        $("#input_text").val(this.text);
+                    });
+
+                    var i=0, val;
+                    var colors = ["#EE6E73","#00AF43"];
+                    window.setInterval(function(){
+                        val = (i%2==0)?0:1;
+                        strings.animate({backgroundColor: colors[val]},3000);
+                        i++;    
+                    },30);
+                    
+              }
+
+              if (event.data.type && (event.data.type == "CHANGE_PAGE_LANGUAGE")) {
+
+                // console.log("Content script received: " + event.data.text);
+                // port.postMessage(event.data.text);
+
+                 changeAngularLanguage();
+                  var json;
+                  console.log("Angular language changed Successfuly!");
+                  for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+                    //console.log( localStorage.getItem( localStorage.key( i ) ) );
+                    json={};
+                    json[localStorage.key(i)]=localStorage.getItem(localStorage.key(i));
+                    angular.element('select').scope().updateLanguage(json);                    
+                  }
+              }
+
+              else if(event.data.type && (event.data.type == "SAVE_TRANSLATION")){
+
+                    var input = document.getElementById("input_text").value;
+                    var translated_text = document.getElementById("translated_text").value;
+
+                    var json={};
+                    json[input]=translated_text;
+                    //console.log("value to be stored = "+ json);
+                    localStorage.setItem(input,translated_text);
+
+                    alert('Translation Saved Successfuly');
+                    angular.element('select').scope().updateLanguage(json);
+                    //console.log("mapping done successfully!");
+              }
+
+            }, false);
+        });
+    </script>
+<!-- </section> -->
+</body>
+</html>
